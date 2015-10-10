@@ -1,0 +1,16 @@
+<?php
+
+namespace Gsup\ForumBundle\Document;
+
+ /**
+ * Description
+ *
+ * @package 
+ * @subpackage 
+ * @author: Pawel J.
+ * @version $Id$
+ */
+class Tag
+{
+
+} 

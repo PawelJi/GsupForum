@@ -1,0 +1,4 @@
+services:
+#    gsup_forum.example:
+#        class: Gsup\ForumBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

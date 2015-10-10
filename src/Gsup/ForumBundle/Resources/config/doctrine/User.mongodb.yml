@@ -1,0 +1,19 @@
+Gsup\ForumBundle\Document\User:
+    fields:
+        id:
+            id: true
+        rate:
+            type: int
+    referenceMany:
+        posts:
+            targetDocument: Post
+            mappedBy: user
+        postsUpdated:
+            targetDocument: Post
+            mappedBy: userLastUpdated
+        postsUpdated:
+            targetDocument: Post
+            mappedBy: userLastUpdatedAny
+        postComment:
+            targetDocument: PostComment
+            mappedBy: user

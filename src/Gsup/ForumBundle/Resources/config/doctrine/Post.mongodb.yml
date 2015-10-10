@@ -1,0 +1,58 @@
+Gsup\ForumBundle\Document\Post:
+    fields:
+        id:
+            id: true
+        title:
+            type: string
+        slug:
+            type: string
+        content:
+            type: string
+        rate:
+            type: int
+        tags:
+            type: hash
+        stats_comment:
+            type: int
+        stats_view:
+            type: int
+        stats_answer:
+            type: int
+        is_authorized_user:
+            type: boolean
+        is_request_open:
+            type: boolean
+        is_request_close:
+            type: boolean
+        is_answer:
+            type: boolean
+        is_resolved:
+            type: boolean
+        is_closed:
+            type: boolean
+        is_active:
+            type: boolean
+        updated_at:
+            type: timestamp
+        updated_any_at:
+            type: timestamp
+        created_at:
+            type: timestamp
+    embedOne:
+        category:
+            targetDocument: Category
+    embedMany:
+        posts:
+            targetDocument: Post
+        postComment:
+            targetDocument: PostComment
+    referenceOne:
+        user:
+            targetDocument: User
+            inversedBy: posts
+        userLastUpdated:
+            targetDocument: User
+            inversedBy: postsUpdated
+        userLastUpdatedAny:
+            targetDocument: User
+            inversedBy: postsUpdatedAny

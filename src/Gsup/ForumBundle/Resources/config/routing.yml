@@ -1,0 +1,8 @@
+gsup_forum_homepage:
+    path:     /
+    defaults: { _controller: GsupForumBundle:Default:index }
+
+gsup_post_new:
+    path:     /create-post
+    defaults: { _controller: GsupForumBundle:Post:create }
+

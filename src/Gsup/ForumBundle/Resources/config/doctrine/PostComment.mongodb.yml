@@ -1,0 +1,21 @@
+Gsup\ForumBundle\Document\PostComment:
+    fields:
+        id:
+            id: true
+        content:
+            type: string
+        rate:
+            type: int
+        is_active:
+            type: boolean
+        updated_at:
+            type: timestamp
+        created_at:
+            type: timestamp
+    referenceOne:
+        user:
+            targetDocument: User
+            inversedBy: postComment
+        post:
+            targetDocument: Post
+            inversedBy: postComment

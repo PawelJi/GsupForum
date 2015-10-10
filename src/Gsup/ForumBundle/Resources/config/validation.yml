@@ -1,0 +1,13 @@
+Gsup\ForumBundle\Document\Post:
+    properties:
+        title:
+            - NotBlank: ~
+            - Length:
+                min: 2
+                max: 255
+        content:
+            - NotBlank: ~
+        tags:
+            - NotBlank: ~
+        category:
+            - NotBlank: ~

@@ -1,0 +1,65 @@
+{% extends 'GsupForumBundle::layout.html.twig' %}
+
+{% block foot_script_assetic %}
+    {{ parent() }}
+    {% javascripts
+    '@GsupForumBundle/Resources/public/js/pagedown/Markdown.Converter.js'
+    '@GsupForumBundle/Resources/public/js/pagedown/Markdown.Sanitizer.js'
+    '@GsupForumBundle/Resources/public/js/pagedown/Markdown.Editor.js'
+    '@GsupForumBundle/Resources/public/js/post/create.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock foot_script_assetic %}
+
+{% block title %}{{title}}{% endblock title %}
+
+{% block content_row %}
+    {{ form_start(form) }}
+
+    <div class="form-group">
+        {{ form_label(form.title) }}
+        {{ form_errors(form.title) }}
+        <div class="col-sm-9">
+            {{ form_widget(form.title) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.content) }}
+        {{ form_errors(form.content) }}
+        <div class="col-sm-9">
+            <div id="wmd-button-bar"></div>
+            {{ form_widget(form.content, {id: 'wmd-input', attr: {'class' : 'wmd-input'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-3 required">Preview</label>
+        <div class="col-sm-9">
+            <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalInsertImage" tabindex="-1" role="dialog" aria-labelledby="modalInsertImage">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add image</h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content_row %}

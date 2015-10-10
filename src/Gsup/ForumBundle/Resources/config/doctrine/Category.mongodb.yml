@@ -1,0 +1,22 @@
+Gsup\ForumBundle\Document\Category:
+    fields:
+        id:
+            id: true
+        parent_id:
+            type: int
+        name:
+            type: string
+        slug:
+            type: string
+            gedmo:
+                slug:
+                    separator: -
+                    style: default
+                    fields:
+                        - name
+        string_path:
+            type: string
+        numeric_path:
+            type: string
+        stats_posts:
+            type: int

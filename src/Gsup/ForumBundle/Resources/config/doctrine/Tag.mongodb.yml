@@ -1,0 +1,16 @@
+Gsup\ForumBundle\Document\Tag:
+    fields:
+        id:
+            id: true
+        name:
+            type: string
+        slug:
+            type: string
+            gedmo:
+                slug:
+                    separator: -
+                    style: default
+                    fields:
+                        - name
+        stats_total:
+            type: int
