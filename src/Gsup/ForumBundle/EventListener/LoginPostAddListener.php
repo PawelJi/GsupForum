@@ -18,7 +18,7 @@ use Symfony\Component\Security\Http\SecurityEvents;
  * @author: Pawel J.
  * @version $Id$
  */
-class LoginPostAddListener extends EventSubscriberInterface
+class LoginPostAddListener implements EventSubscriberInterface
 {
     /**
      * @var \FOS\UserBundle\Model\UserManagerInterface
@@ -28,7 +28,7 @@ class LoginPostAddListener extends EventSubscriberInterface
     /**
      * @var \Doctrine\ODM\MongoDB\DocumentManager
      */
-    protected $dm;
+    protected $_dm;
 
     public function __construct(UserManagerInterface $userManager, DocumentManager $dm)
     {
