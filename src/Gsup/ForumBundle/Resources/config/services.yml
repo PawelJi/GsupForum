@@ -1,4 +1,9 @@
 services:
+    gsup_forum.password_resetting:
+        class: Gsup\ForumBundle\EventListener\LoginPostAddListener
+        arguments: [@userManager, @doctrine.doctrine_mongodb.manager]
+        tags:
+            - { name: kernel.event_subscriber }
 #    gsup_forum.example:
 #        class: Gsup\ForumBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]

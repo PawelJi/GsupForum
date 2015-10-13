@@ -8,8 +8,4 @@ use Gsup\ForumBundle\DependencyInjection\Compiler\SassPass;
 
 class GsupForumBundle extends Bundle
 {
-//    public function build(ContainerBuilder $container)
-//    {
-//        $container->addCompilerPass(new SassPass());
-//    }
 }
