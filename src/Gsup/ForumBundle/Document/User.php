@@ -2,6 +2,8 @@
 
 namespace Gsup\ForumBundle\Document;
 
+use FOS\UserBundle\Model\User as BaseUser;
+
  /**
  * Description
  *
@@ -10,7 +12,7 @@ namespace Gsup\ForumBundle\Document;
  * @author: Pawel J.
  * @version $Id$
  */
-class User
+class User extends BaseUser
 {
 
     /**

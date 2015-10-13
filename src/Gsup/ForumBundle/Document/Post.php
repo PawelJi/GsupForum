@@ -697,4 +697,21 @@ class Post
     {
         return $this->userLastUpdatedAny;
     }
+
+    /**
+     * Input normalization data.
+     */
+    public function normalizeTags()
+    {
+        $tagsHashArray = [];
+        foreach ($this->getTags() as $key => $tag) {
+            if (is_string($tag)) {
+                $tagsHashArray[$key] = $tag;
+            }
+            if ($tag instanceof Tag) {
+                $tagsHashArray[$tag->getSlug()] = $tag->getName();
+            }
+        }
+        $this->setTags($tagsHashArray);
+    }
 }
