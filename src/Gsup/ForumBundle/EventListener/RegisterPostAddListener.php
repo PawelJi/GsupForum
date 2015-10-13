@@ -2,13 +2,9 @@
 
 namespace Gsup\ForumBundle\EventListener;
 
-use Doctrine\ODM\MongoDB\DocumentManager;
 use FOS\UserBundle\FOSUserEvents;
-use FOS\UserBundle\Event\UserEvent;
-use FOS\UserBundle\Model\UserManagerInterface;
+use FOS\UserBundle\Event\FilterUserResponseEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
-use Symfony\Component\Security\Http\SecurityEvents;
 
  /**
  * Description
@@ -18,7 +14,7 @@ use Symfony\Component\Security\Http\SecurityEvents;
  * @author: Pawel J.
  * @version $Id$
  */
-class LoginPostAddListener implements EventSubscriberInterface
+class RegisterPostAddListener implements EventSubscriberInterface
 {
     /**
      * @var \FOS\UserBundle\Model\UserManagerInterface
@@ -39,12 +35,12 @@ class LoginPostAddListener implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return array(
-            FOSUserEvents::SECURITY_IMPLICIT_LOGIN => 'onImplicitLogin',
-            SecurityEvents::INTERACTIVE_LOGIN => 'onSecurityInteractiveLogin',
+            FOSUserEvents::REGISTRATION_COMPLETED => 'onRegistrationCompleted',
+            FOSUserEvents::REGISTRATION_CONFIRMED => 'onRegistrationConfirmed',
         );
     }
 
-    private function _updatePost($request, $user)
+    private function _getPost($request)
     {
         if (!($session = $request->getSession())) {
             return;
@@ -56,25 +52,29 @@ class LoginPostAddListener implements EventSubscriberInterface
 
         $session->remove('postAdd');
 
-        $post = $this->_dm->getRepository('GsupForumBundle:Post')->find($id);
+        $dm = $this->_dm->getManager();
 
-        if (!$post) {
+        return $dm->getRepository('GsupForumBundle:Post')->find($id);
+    }
+
+    public function onRegistrationCompleted(FilterUserResponseEvent $event)
+    {
+        if (!$post = $this->_getPost($event->getRequest())) {
             return;
-        }
+        };
 
-        $post->setUser($user);
+        $post->setUser($event->getUser());
+        $post->setIsActive(false);
 
         $this->_dm->flush();
     }
 
-    public function onImplicitLogin(UserEvent $event)
+    public function onRegistrationConfirmed(FilterUserResponseEvent $event)
     {
-        $this->_updatePost($event->getRequest(), $event->getUser());
-    }
+        foreach ($event->getUser()->getPosts() as $post) {
+            $post->setIsActive(true);
+        };
 
-    public function onSecurityInteractiveLogin(InteractiveLoginEvent $event)
-    {
-        $this->_updatePost($event->getRequest(), $event->getAuthenticationToken()->getUser());
+        $this->_dm->flush();
     }
-
 } 
