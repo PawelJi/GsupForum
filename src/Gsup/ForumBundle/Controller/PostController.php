@@ -37,11 +37,17 @@ class PostController extends Controller
 
         $post->normalizeTags();
 
+        if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            $post->setUser($this->getUser());
+        }
+
         $dm = $this->get('doctrine_mongodb')->getManager();
         $dm->persist($post);
         $dm->flush();
 
-        if ( !$this->container->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY') ) {
+        $this->getUser();
+
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             $this->get('session')->set('postAdd', $post->getId());
             return $this->redirectToRoute('fos_user_security_login');
         }
