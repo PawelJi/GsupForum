@@ -104,7 +104,7 @@ class PostControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/view/');
+        $crawler = $client->request('GET', '/post/test');
     }
 
 } 

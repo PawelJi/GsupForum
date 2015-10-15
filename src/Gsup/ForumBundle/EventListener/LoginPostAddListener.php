@@ -63,6 +63,7 @@ class LoginPostAddListener implements EventSubscriberInterface
         }
 
         $post->setUser($user);
+        $post->setIsActive(true);
 
         $this->_dm->flush();
     }
