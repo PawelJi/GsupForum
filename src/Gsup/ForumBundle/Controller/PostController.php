@@ -54,8 +54,16 @@ class PostController extends Controller
 
         $this->get('session')->getFlashBag()->add('notice', 'You have successfully added new post');
 
-        return $this->redirectToRoute('post_view', array(
+        return $this->redirectToRoute('gsup_post_view', array(
             'id' => $post->getId()
         ));
+    }
+
+    public function viewAction($slug)
+    {
+        return $this->render('GsupForumBundle:Post:views.html.twig',array(
+                'title' => 'Post - ',
+            )
+        );
     }
 }

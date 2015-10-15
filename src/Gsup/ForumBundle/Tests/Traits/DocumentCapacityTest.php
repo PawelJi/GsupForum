@@ -50,9 +50,15 @@ class DocumentCapacityTest extends \PHPUnit_Framework_TestCase
     public function propertyDataProvider()
     {
         return [
-            ['testPropertyOne' => 1, 'testPropertyTwo' => 2],
-            ['testPropertyOne' => 'test'],
-            []
+            [
+                ['testPropertyOne' => 1, 'testPropertyTwo' => 2],
+            ],
+            [
+                ['testPropertyOne' => 'test'],
+            ],
+            [
+                []
+            ]
         ];
     }
 

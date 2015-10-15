@@ -6,3 +6,6 @@ gsup_post_new:
     path:     /create-post
     defaults: { _controller: GsupForumBundle:Post:create }
 
+gsup_post_view:
+    path:     /post/:slug
+    defaults: { _controller: GsupForumBundle:Post:view }

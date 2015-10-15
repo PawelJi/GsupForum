@@ -6,6 +6,14 @@ Gsup\ForumBundle\Document\Post:
             type: string
         slug:
             type: string
+            index: true
+            unique: true
+            gedmo:
+                slug:
+                    separator: -
+                    style: default
+                    fields:
+                        - title
         content:
             type: string
         rate:
