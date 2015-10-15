@@ -1,4 +1,5 @@
 Gsup\ForumBundle\Document\Post:
+    repositoryClass: Gsup\ForumBundle\Repository\PostRepository
     fields:
         id:
             id: true

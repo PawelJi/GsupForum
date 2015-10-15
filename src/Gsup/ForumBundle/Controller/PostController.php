@@ -39,6 +39,7 @@ class PostController extends Controller
 
         if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             $post->setUser($this->getUser());
+            $post->setIsActive(true);
         }
 
         $dm = $this->get('doctrine_mongodb')->getManager();
@@ -54,15 +55,23 @@ class PostController extends Controller
 
         $this->get('session')->getFlashBag()->add('notice', 'You have successfully added new post');
 
-        return $this->redirectToRoute('gsup_post_view', array(
+        return $this->redirectToRoute('gsup_post_show', array(
             'id' => $post->getId()
         ));
     }
 
-    public function viewAction($slug)
+    public function showAction($slug)
     {
-        return $this->render('GsupForumBundle:Post:views.html.twig',array(
-                'title' => 'Post - ',
+        $post = $this->get('doctrine_mongodb')
+            ->getRepository('GsupForumBundle:Post')
+            ->findActiveBySlug($slug);
+
+        if (!$post) {
+            throw $this->createNotFoundException('The post does not exist.');
+        }
+
+        return $this->render('GsupForumBundle:Post:show.html.twig',array(
+                'title' => 'Post - '. $post->getTitle(),
             )
         );
     }
