@@ -14,3 +14,8 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+doctrine_mongodb:
+    default_database: forum_test
+
+liip_functional_test: ~

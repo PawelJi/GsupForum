@@ -37,7 +37,8 @@
         "stof/doctrine-extensions-bundle":      "*"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "liip/functional-test-bundle": "^1.2"
     },
     "scripts": {
         "post-root-package-install": [

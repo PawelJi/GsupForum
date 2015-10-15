@@ -56,7 +56,7 @@ class PostController extends Controller
         $this->get('session')->getFlashBag()->add('notice', 'You have successfully added new post');
 
         return $this->redirectToRoute('gsup_post_show', array(
-            'id' => $post->getId()
+            'slug' => $post->getSlug()
         ));
     }
 

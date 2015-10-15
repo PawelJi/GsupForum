@@ -11,11 +11,24 @@
 namespace Gsup\ForumBundle\Tests\Controller;
 
 use Gsup\ForumBundle\Traits\TestUser;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Liip\FunctionalTestBundle\Test\WebTestCase;
 
 class PostControllerTest extends WebTestCase
 {
     use TestUser;
+
+    public function setUp()
+    {
+        parent::setUp();
+
+        $fixtures = array(
+            'Gsup\ForumBundle\DataFixtures\MongoDB\LoadCategoryData',
+            'Gsup\ForumBundle\DataFixtures\MongoDB\LoadTagData',
+            'Gsup\ForumBundle\DataFixtures\MongoDB\LoadUserData',
+        );
+
+        $this->loadFixtures($fixtures, null, 'doctrine_mongodb');
+    }
 
     public function testCreatePostFormFields()
     {
@@ -95,16 +108,16 @@ class PostControllerTest extends WebTestCase
 
         $this->assertTrue($client->getResponse()->isRedirect());
 
-        $this->assertFalse(
-            $client->getResponse()->isRedirect('/login')
+        $this->assertTrue(
+            $client->getResponse()->isRedirect('/post/test-post')
         );
     }
 
-    public function testPostView()
-    {
-        $client = static::createClient();
-
-        $crawler = $client->request('GET', '/post/test');
-    }
+//    public function testPostView()
+//    {
+//        $client = static::createClient();
+//
+//        $crawler = $client->request('GET', '/post/test');
+//    }
 
 } 
