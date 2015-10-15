@@ -2,7 +2,8 @@
  
 namespace Gsup\ForumBundle\DataFixtures\MongoDB;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Gsup\ForumBundle\Document\Category;
 use Symfony\Component\Yaml\Yaml;
@@ -11,7 +12,7 @@ use Symfony\Component\Yaml\Yaml;
  * Class LoadCategoryData
  * @package Gsup\ForumBundle\DataFixtures\MongoDB
  */
-class LoadCategoryData implements FixtureInterface
+class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
@@ -26,11 +27,23 @@ class LoadCategoryData implements FixtureInterface
 
         $yml = Yaml::parse(file_get_contents($filename));
         foreach ($yml as $data) {
-            $tag = new Category();
-            $tag->setName($data);
-            $manager->persist($tag);
+            $category = new Category();
+            $category->setName($data);
+            $manager->persist($category);
+        }
+
+        if ($category) {
+            $this->addReference('random-category', $category);
         }
 
         $manager->flush();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getOrder()
+    {
+        return 2; // the order in which fixtures will be loaded
     }
 }

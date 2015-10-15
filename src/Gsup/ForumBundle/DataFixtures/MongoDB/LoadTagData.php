@@ -10,12 +10,13 @@
  
 namespace Gsup\ForumBundle\DataFixtures\MongoDB;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Gsup\ForumBundle\Document\Tag;
 use Symfony\Component\Yaml\Yaml;
 
-class LoadTagData implements FixtureInterface
+class LoadTagData extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritDoc}
@@ -36,6 +37,18 @@ class LoadTagData implements FixtureInterface
             $manager->persist($tag);
         }
 
+        if ($tag) {
+            $this->addReference('random-tag', $tag);
+        }
+
         $manager->flush();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getOrder()
+    {
+        return 3; // the order in which fixtures will be loaded
     }
 }

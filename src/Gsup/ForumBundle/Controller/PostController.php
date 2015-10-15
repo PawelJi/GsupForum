@@ -72,6 +72,7 @@ class PostController extends Controller
 
         return $this->render('GsupForumBundle:Post:show.html.twig',array(
                 'title' => 'Post - '. $post->getTitle(),
+                'post' => $post
             )
         );
     }

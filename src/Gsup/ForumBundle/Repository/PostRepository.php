@@ -22,8 +22,8 @@ class PostRepository extends DocumentRepository
     {
         return $this->createQueryBuilder()
             ->field('slug')->equals($slug)
-            ->field('user')->notEqual(null)
-            ->field('is_active')->equals(true)
+//            ->field('user')->exists(true)
+//            ->field('is_active')->equals(true)
             ->getQuery()
             ->getSingleResult();
     }

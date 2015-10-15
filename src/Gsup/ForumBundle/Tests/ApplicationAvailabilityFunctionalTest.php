@@ -2,7 +2,7 @@
 
 namespace Gsup\ForumBundle\Tests;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Liip\FunctionalTestBundle\Test\WebTestCase;
 
  /**
  * ApplicationAvailabilityFunctionalTest test class.
@@ -14,6 +14,20 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  */
 class ApplicationAvailabilityFunctionalTest extends WebTestCase
 {
+    public static function setUpBeforeClass()
+    {
+        parent::setUpBeforeClass();
+
+        $fixtures = array(
+            'Gsup\ForumBundle\DataFixtures\MongoDB\LoadCategoryData',
+            'Gsup\ForumBundle\DataFixtures\MongoDB\LoadTagData',
+            'Gsup\ForumBundle\DataFixtures\MongoDB\LoadUserData',
+            'Gsup\ForumBundle\Tests\DataFixtures\MongoDB\LoadPostData',
+        );
+
+        (new self())->loadFixtures($fixtures, null, 'doctrine_mongodb');
+    }
+
     /**
      * @dataProvider urlProvider
      */
@@ -30,7 +44,7 @@ class ApplicationAvailabilityFunctionalTest extends WebTestCase
         return array(
             array('/'),
             array('/create-post'),
-//            array('/post/fixture-post-1'),
+            array('/post/test-post-for-tests'),
 //            array('/blog/category/fixture-category'),
 //            array('/archives'),
         );
