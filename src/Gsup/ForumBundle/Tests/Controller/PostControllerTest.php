@@ -113,11 +113,11 @@ class PostControllerTest extends WebTestCase
         );
     }
 
-//    public function testPostView()
-//    {
-//        $client = static::createClient();
-//
-//        $crawler = $client->request('GET', '/post/test');
-//    }
+    public function testPostView()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/post/test');
+    }
 
 } 
