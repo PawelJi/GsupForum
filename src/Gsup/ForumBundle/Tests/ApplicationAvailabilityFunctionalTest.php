@@ -45,6 +45,7 @@ class ApplicationAvailabilityFunctionalTest extends WebTestCase
             array('/'),
             array('/create-post'),
             array('/post/test-post-for-tests'),
+            array('/posts'),
 //            array('/blog/category/fixture-category'),
 //            array('/archives'),
         );

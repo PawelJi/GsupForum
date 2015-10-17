@@ -13,6 +13,20 @@ use Doctrine\ODM\MongoDB\DocumentRepository;
 class PostRepository extends DocumentRepository
 {
     /**
+     * Get list query.
+     *
+     * @return \Doctrine\MongoDB\Query\Query
+     */
+    public function getListQuery()
+    {
+        return $this->createQueryBuilder()
+            ->field('user')->exists(true)
+            ->field('is_active')->equals(true)
+            ->sort('created_at', 'DESC')
+            ->getQuery();
+    }
+
+    /**
      * Find active post document.
      *
      * @param $slug
@@ -22,8 +36,8 @@ class PostRepository extends DocumentRepository
     {
         return $this->createQueryBuilder()
             ->field('slug')->equals($slug)
-//            ->field('user')->exists(true)
-//            ->field('is_active')->equals(true)
+            ->field('user')->exists(true)
+            ->field('is_active')->equals(true)
             ->getQuery()
             ->getSingleResult();
     }

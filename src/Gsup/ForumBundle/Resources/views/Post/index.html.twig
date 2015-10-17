@@ -1,0 +1,33 @@
+{% extends 'GsupForumBundle::layout.html.twig' %}
+
+{% block title %}{{title}}{% endblock title %}
+
+{% block content_row %}
+
+{# total items count #}
+<div class="count">
+    {{ pagination.getTotalItemCount }}
+</div>
+<table>
+    <tr>
+        {# sorting of properties based on query components #}
+        <th{% if pagination.isSorted('post.title') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Title', 'post.title') }}</th>
+        <th>{{ knp_pagination_sortable(pagination, 'Created', ['post.created_at']) }}</th>
+    </tr>
+    {# table body #}
+    {% for post in pagination %}
+        <tr {% if loop.index is odd %}class="color"{% endif %}>
+            <td>
+                <a href="{{ path('gsup_post_show', {'slug' : post.slug}) }}">
+                    {{ post.title }}
+                </a>
+            </td>
+            <td>{{ post.createdAt | date('Y-m-d H:i:s') }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{# display navigation #}
+<div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+</div>
+{% endblock content_row %}

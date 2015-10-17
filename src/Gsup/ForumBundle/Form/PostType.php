@@ -20,8 +20,18 @@ class PostType extends AbstractType
     {
         $builder
             ->add('title', 'text')
-            ->add('content', 'textarea')
-            ->add('tags', 'document', [
+            ->add('content', 'textarea');
+
+        if ('test' == $options['env']) {
+            $builder->add('tags', 'choice', [
+                'choice_label' => 'name',
+                'multiple'     => true,
+            ])
+            ->add('category', 'choice', [
+                'choice_label' => 'name',
+            ]);
+        } else {
+            $builder->add('tags', 'document', [
                 'widget_type' => 'inline-btn',
                 'expanded'    => true,
                 'class' => 'GsupForumBundle:Tag',
@@ -34,15 +44,16 @@ class PostType extends AbstractType
             ->add('category', 'document', [
                 'class' => 'GsupForumBundle:Category',
                 'choice_label' => 'name',
-            ])
-            ->add('save', 'submit');
-
+            ]);
+        }
+        $builder->add('save', 'submit');
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Gsup\ForumBundle\Document\Post',
+            'env' => 'prod'
         ));
     }
 
