@@ -34,7 +34,8 @@
         "league/html-to-markdown": "~4.0",
         "components/angular.js": "*",
         "doctrine/doctrine-fixtures-bundle": "^2.2",
-        "stof/doctrine-extensions-bundle":      "*"
+        "stof/doctrine-extensions-bundle":      "*",
+        "fzaninotto/faker": "^1.5"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

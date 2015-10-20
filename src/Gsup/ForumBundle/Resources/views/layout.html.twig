@@ -14,6 +14,10 @@
      #}
 {% endblock head_style %}
 
+{% block navbar %}
+    {{ knp_menu_render('GsupForumBundle:Builder:mainMenu') }}
+{% endblock navbar %}
+
 {# block navbar %}
     {{ knp_menu_render('MiniShopBundle:Builder:mainMenu') }}
 {% endblock navbar % #}

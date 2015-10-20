@@ -1,5 +1,9 @@
 {% extends 'MopaBootstrapBundle::base_sass_3.2.html.twig' %}
 
+{% block navbar %}
+    {{ knp_menu_render('GsupForumBundle:Builder:mainMenu') }}
+{% endblock navbar %}
+
 {% block content_row %}
 
 <div>

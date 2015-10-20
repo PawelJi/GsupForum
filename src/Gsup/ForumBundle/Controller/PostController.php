@@ -13,7 +13,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class PostController extends Controller
 {
-
     public function createAction(Request $request)
     {
         $post = new Post();
