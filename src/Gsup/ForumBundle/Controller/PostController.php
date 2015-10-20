@@ -13,24 +13,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class PostController extends Controller
 {
-    public function indexAction(Request $request)
-    {
-        $query = $this->get('doctrine_mongodb')
-            ->getRepository('GsupForumBundle:Post')
-            ->getListQuery()
-        ;
-
-        $pagination = $this->get('knp_paginator')->paginate(
-            $query,
-            $request->query->getInt('page', 1),
-            10
-        );
-
-        return $this->render('GsupForumBundle:Post:index.html.twig', array(
-            'pagination' => $pagination,
-            'title' => 'Posts'
-        ));
-    }
 
     public function createAction(Request $request)
     {

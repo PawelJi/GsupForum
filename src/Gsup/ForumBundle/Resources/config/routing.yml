@@ -4,7 +4,7 @@ gsup_forum_homepage:
 
 gsup_post_post_list:
     path:     /posts/{page}
-    defaults: { _controller: GsupForumBundle:Post:index, page: 1 }
+    defaults: { _controller: GsupForumBundle:Default:index, page: 1 }
     requirements:
         page:  \d+
 
