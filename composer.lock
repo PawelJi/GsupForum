@@ -1226,12 +1226,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "df142796394681d0f77416ec92c66972ce0ba14b"
+                "reference": "aeea99947330d6e2be16a4a8ffc5f7cb2174bf50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/df142796394681d0f77416ec92c66972ce0ba14b",
-                "reference": "df142796394681d0f77416ec92c66972ce0ba14b",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/aeea99947330d6e2be16a4a8ffc5f7cb2174bf50",
+                "reference": "aeea99947330d6e2be16a4a8ffc5f7cb2174bf50",
                 "shasum": ""
             },
             "require": {
@@ -1300,7 +1300,7 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2015-10-19 05:35:31"
+            "time": "2015-10-21 06:56:34"
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
@@ -1944,12 +1944,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "f8c6b24a846e3713899f02e72604a78d80bb1b37"
+                "reference": "a07920b10a3b888abe7c47c7aecf56f69553f707"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/f8c6b24a846e3713899f02e72604a78d80bb1b37",
-                "reference": "f8c6b24a846e3713899f02e72604a78d80bb1b37",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/a07920b10a3b888abe7c47c7aecf56f69553f707",
+                "reference": "a07920b10a3b888abe7c47c7aecf56f69553f707",
                 "shasum": ""
             },
             "require": {
@@ -1993,7 +1993,7 @@
             "keywords": [
                 "menu"
             ],
-            "time": "2015-10-01 08:23:01"
+            "time": "2015-10-22 10:06:42"
         },
         {
             "name": "knplabs/knp-paginator-bundle",
