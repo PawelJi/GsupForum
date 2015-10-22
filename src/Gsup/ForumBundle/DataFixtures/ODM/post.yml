@@ -1,0 +1,8 @@
+Gsup\ForumBundle\Document\Post:
+    post_{1..1000}:
+        title: <sentence()>
+        content: <realText(1200)>
+        user: @user*
+        category: @category*
+        tags: <words()>
+        is_active: true

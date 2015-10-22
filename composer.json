@@ -34,12 +34,12 @@
         "league/html-to-markdown": "~4.0",
         "components/angular.js": "*",
         "doctrine/doctrine-fixtures-bundle": "^2.2",
-        "stof/doctrine-extensions-bundle":      "*",
-        "fzaninotto/faker": "^1.5"
+        "stof/doctrine-extensions-bundle":      "*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
-        "liip/functional-test-bundle": "^1.2"
+        "liip/functional-test-bundle": "^1.2",
+        "hautelook/alice-bundle": "^1.0"
     },
     "scripts": {
         "post-root-package-install": [

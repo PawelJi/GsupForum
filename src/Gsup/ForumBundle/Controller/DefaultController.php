@@ -17,7 +17,7 @@ class DefaultController extends Controller
         $pagination = $this->get('knp_paginator')->paginate(
             $query,
             $request->query->getInt('page', 1),
-            10
+            50
         );
 
         return $this->render('GsupForumBundle:Default:index.html.twig', array(

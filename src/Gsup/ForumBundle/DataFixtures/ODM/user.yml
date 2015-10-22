@@ -1,0 +1,8 @@
+Gsup\ForumBundle\Document\User:
+    user_{1..10}:
+        username: <username()>
+        usernameCanonical: <username()>
+        email: <email()>
+        emailCanonical: <email()>
+        password: <password()>
+        enabled: true
