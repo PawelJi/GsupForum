@@ -22,6 +22,7 @@ class PostRepository extends DocumentRepository
         return $this->createQueryBuilder()
             ->field('user')->exists(true)
             ->field('is_active')->equals(true)
+            ->field('is_answer')->equals(false)
             ->sort('created_at', 'DESC')
             ->getQuery();
     }
@@ -37,6 +38,7 @@ class PostRepository extends DocumentRepository
         return $this->createQueryBuilder()
             ->field('slug')->equals($slug)
             ->field('user')->exists(true)
+            ->field('is_answer')->equals(false)
             ->field('is_active')->equals(true)
             ->getQuery()
             ->getSingleResult();

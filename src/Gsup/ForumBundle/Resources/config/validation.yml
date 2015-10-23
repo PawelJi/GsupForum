@@ -6,7 +6,7 @@ Gsup\ForumBundle\Document\Post:
                 min: 2
                 max: 255
         content:
-            - NotBlank: ~
+            - NotBlank: { groups: [reply] }
         tags:
             - NotBlank: ~
         category:

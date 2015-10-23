@@ -25,6 +25,7 @@ class PostControllerTest extends WebTestCase
             'Gsup\ForumBundle\DataFixtures\MongoDB\LoadCategoryData',
             'Gsup\ForumBundle\DataFixtures\MongoDB\LoadTagData',
             'Gsup\ForumBundle\DataFixtures\MongoDB\LoadUserData',
+            'Gsup\ForumBundle\Tests\DataFixtures\MongoDB\LoadPostData',
         );
 
         $this->loadFixtures($fixtures, null, 'doctrine_mongodb');
@@ -61,7 +62,7 @@ class PostControllerTest extends WebTestCase
             ->first()
             ->attr('value');
 
-        $buttonCrawlerNode = $crawler->selectButton('Save');
+        $buttonCrawlerNode = $crawler->selectButton('Create Post');
 
         $form = $buttonCrawlerNode->form();
 
@@ -95,7 +96,7 @@ class PostControllerTest extends WebTestCase
             ->first()
             ->attr('value');
 
-        $buttonCrawlerNode = $crawler->selectButton('Save');
+        $buttonCrawlerNode = $crawler->selectButton('Create Post');
 
         $form = $buttonCrawlerNode->form();
 
@@ -113,12 +114,46 @@ class PostControllerTest extends WebTestCase
         );
     }
 
-    public function testPostView()
+    public function testReplyAnonymous()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/post/test');
+        $crawler = $client->request('GET', '/post/test-post-for-tests');
+
+        $buttonCrawlerNode = $crawler->selectButton('Reply');
+
+        $form = $buttonCrawlerNode->form();
+
+        $client->submit($form, array(
+            'forum_reply[content]' => 'Test content',
+        ));
+
+        $this->assertTrue($client->getResponse()->isRedirect());
+
+        $this->assertTrue(
+            $client->getResponse()->isRedirect('/login')
+        );
     }
 
+    public function testReplyAuthenticated()
+    {
+        $client = $this->createAuthorizedClient();
+
+        $crawler = $client->request('GET', '/post/test-post-for-tests');
+
+        $buttonCrawlerNode = $crawler->selectButton('Reply');
+
+        $form = $buttonCrawlerNode->form();
+
+        $client->submit($form, array(
+            'forum_reply[content]' => 'Test content',
+        ));
+
+        $this->assertTrue($client->getResponse()->isRedirect());
+
+        $this->assertTrue(
+            $client->getResponse()->isRedirect('/post/test-post-for-tests')
+        );
+    }
 
 } 

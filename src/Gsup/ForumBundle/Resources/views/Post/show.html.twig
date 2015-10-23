@@ -2,7 +2,39 @@
 
 {% block title %}{{title}}{% endblock title %}
 
+{% block foot_script_assetic %}
+    {{ parent() }}
+    {% javascripts
+    '@GsupForumBundle/Resources/public/js/pagedown/Markdown.Converter.js'
+    '@GsupForumBundle/Resources/public/js/pagedown/Markdown.Sanitizer.js'
+    '@GsupForumBundle/Resources/public/js/pagedown/Markdown.Editor.js'
+    '@GsupForumBundle/Resources/public/js/post/reply.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock foot_script_assetic %}
+
 {% block content_row %}
     <h1>{{ post.title }}</h1>
     <div>{{ post.content }}</div>
+
+    <div>
+        {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.content) }}
+            {{ form_errors(form.content) }}
+            <div class="col-sm-9">
+                <div id="wmd-button-bar"></div>
+                {{ form_widget(form.content, {id: 'wmd-input', attr: {'class' : 'wmd-input'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-3 required">Preview</label>
+            <div class="col-sm-9">
+                <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
 {% endblock content_row %}

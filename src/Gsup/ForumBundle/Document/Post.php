@@ -553,7 +553,7 @@ class Post
     /**
      * Set category
      *
-     * @param Gsup\ForumBundle\Document\Category $category
+     * @param \Gsup\ForumBundle\Document\Category $category
      * @return self
      */
     public function setCategory(\Gsup\ForumBundle\Document\Category $category)
@@ -575,7 +575,7 @@ class Post
     /**
      * Add post
      *
-     * @param Gsup\ForumBundle\Document\Post $post
+     * @param \Gsup\ForumBundle\Document\Post $post
      */
     public function addPost(\Gsup\ForumBundle\Document\Post $post)
     {
@@ -585,7 +585,7 @@ class Post
     /**
      * Remove post
      *
-     * @param Gsup\ForumBundle\Document\Post $post
+     * @param \Gsup\ForumBundle\Document\Post $post
      */
     public function removePost(\Gsup\ForumBundle\Document\Post $post)
     {
@@ -605,7 +605,7 @@ class Post
     /**
      * Add postComment
      *
-     * @param Gsup\ForumBundle\Document\PostComment $postComment
+     * @param \Gsup\ForumBundle\Document\PostComment $postComment
      */
     public function addPostComment(\Gsup\ForumBundle\Document\PostComment $postComment)
     {
@@ -615,7 +615,7 @@ class Post
     /**
      * Remove postComment
      *
-     * @param Gsup\ForumBundle\Document\PostComment $postComment
+     * @param \Gsup\ForumBundle\Document\PostComment $postComment
      */
     public function removePostComment(\Gsup\ForumBundle\Document\PostComment $postComment)
     {
@@ -635,7 +635,7 @@ class Post
     /**
      * Set user
      *
-     * @param Gsup\ForumBundle\Document\User $user
+     * @param \Gsup\ForumBundle\Document\User $user
      * @return self
      */
     public function setUser(\Gsup\ForumBundle\Document\User $user)
@@ -657,7 +657,7 @@ class Post
     /**
      * Set userLastUpdated
      *
-     * @param Gsup\ForumBundle\Document\User $userLastUpdated
+     * @param \Gsup\ForumBundle\Document\User $userLastUpdated
      * @return self
      */
     public function setUserLastUpdated(\Gsup\ForumBundle\Document\User $userLastUpdated)
@@ -679,7 +679,7 @@ class Post
     /**
      * Set userLastUpdatedAny
      *
-     * @param Gsup\ForumBundle\Document\User $userLastUpdatedAny
+     * @param \Gsup\ForumBundle\Document\User $userLastUpdatedAny
      * @return self
      */
     public function setUserLastUpdatedAny(\Gsup\ForumBundle\Document\User $userLastUpdatedAny)

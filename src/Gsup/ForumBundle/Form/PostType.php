@@ -46,7 +46,7 @@ class PostType extends AbstractType
                 'choice_label' => 'name',
             ]);
         }
-        $builder->add('save', 'submit');
+        $builder->add('save', 'submit', array('label' => 'Create Post'));
     }
 
     public function configureOptions(OptionsResolver $resolver)

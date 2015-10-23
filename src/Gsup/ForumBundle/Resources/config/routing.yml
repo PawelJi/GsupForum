@@ -15,3 +15,9 @@ gsup_post_new:
 gsup_post_show:
     path:     /post/{slug}
     defaults: { _controller: GsupForumBundle:Post:show }
+    methods:  [GET]
+
+gsup_post_reply:
+    path:     /post/{slug}
+    defaults: { _controller: GsupForumBundle:Post:replyForm }
+    methods:  [POST]
