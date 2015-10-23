@@ -33,6 +33,7 @@ class LoadPostData extends AbstractFixture implements OrderedFixtureInterface
         }
         $post->setTags(['test' => 'test']);
         $post->setIsActive(true);
+        $post->setIsAnswer(false);
 
         $manager->persist($post);
 

@@ -44,7 +44,7 @@ class PostController extends Controller
         $dm->flush();
 
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
-            $this->get('session')->getFlashBag()->add('notice', 'Login of register to add new post.');
+            $this->get('session')->getFlashBag()->add('notice', 'Login or register to add new post.');
             $this->get('session')->set('postAdd', $post->getId());
             return $this->redirectToRoute('fos_user_security_login');
         }
@@ -117,7 +117,7 @@ class PostController extends Controller
         $dm->flush();
 
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
-            $this->get('session')->getFlashBag()->add('notice', 'Login of register to add reply.');
+            $this->get('session')->getFlashBag()->add('notice', 'Login or register to add reply.');
             $this->get('session')->set('postAdd', $reply->getId());
             return $this->redirectToRoute('fos_user_security_login');
         }

@@ -5,4 +5,5 @@ Gsup\ForumBundle\Document\Post:
         user: @user*
         category: @category*
         tags: <words()>
+        is_answer: false
         is_active: true
