@@ -10,13 +10,18 @@ namespace Gsup\ForumBundle\Document;
  * @author: Pawel J.
  * @version $Id$
  */
-class PostComment
+class Comment
 {
 
     /**
      * @var MongoId $id
      */
     protected $id;
+
+    /**
+     * @var string $post_id
+     */
+    protected $post_id;
 
     /**
      * @var string $content
@@ -44,15 +49,9 @@ class PostComment
     protected $created_at;
 
     /**
-     * @var Gsup\ForumBundle\Document\User
+     * @var \Gsup\ForumBundle\Document\User
      */
     protected $user;
-
-    /**
-     * @var Gsup\ForumBundle\Document\Post
-     */
-    protected $post;
-
 
     /**
      * Get id
@@ -177,7 +176,7 @@ class PostComment
     /**
      * Set user
      *
-     * @param Gsup\ForumBundle\Document\User $user
+     * @param \Gsup\ForumBundle\Document\User $user
      * @return self
      */
     public function setUser(\Gsup\ForumBundle\Document\User $user)
@@ -189,32 +188,33 @@ class PostComment
     /**
      * Get user
      *
-     * @return Gsup\ForumBundle\Document\User $user
+     * @return \Gsup\ForumBundle\Document\User $user
      */
     public function getUser()
     {
         return $this->user;
     }
 
+
     /**
-     * Set post
+     * Set postId
      *
-     * @param Gsup\ForumBundle\Document\Post $post
+     * @param string $postId
      * @return self
      */
-    public function setPost(\Gsup\ForumBundle\Document\Post $post)
+    public function setPostId($postId)
     {
-        $this->post = $post;
+        $this->post_id = $postId;
         return $this;
     }
 
     /**
-     * Get post
+     * Get postId
      *
-     * @return Gsup\ForumBundle\Document\Post $post
+     * @return string $postId
      */
-    public function getPost()
+    public function getPostId()
     {
-        return $this->post;
+        return $this->post_id;
     }
 }

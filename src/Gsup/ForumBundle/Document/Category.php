@@ -12,16 +12,11 @@ namespace Gsup\ForumBundle\Document;
  */
 class Category
 {
-
+    
     /**
      * @var MongoId $id
      */
     protected $id;
-
-    /**
-     * @var int $parent_id
-     */
-    protected $parent_id;
 
     /**
      * @var string $name
@@ -34,20 +29,19 @@ class Category
     protected $slug;
 
     /**
-     * @var string $string_path
-     */
-    protected $string_path;
-
-    /**
-     * @var string $numeric_path
-     */
-    protected $numeric_path;
-
-    /**
      * @var int $stats_posts
      */
     protected $stats_posts;
 
+    /**
+     * @var \Gsup\ForumBundle\Document\Category
+     */
+    protected $ancestor = array();
+
+    public function __construct()
+    {
+        $this->ancestor = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -58,19 +52,6 @@ class Category
     {
         return $this->id;
     }
-
-    /**
-     * Set parentId
-     *
-     * @param int $parentId
-     * @return self
-     */
-    public function setParentId($parentId)
-    {
-        $this->parent_id = $parentId;
-        return $this;
-    }
-
     /**
      * Get parentId
      *
@@ -126,50 +107,6 @@ class Category
     }
 
     /**
-     * Set stringPath
-     *
-     * @param string $stringPath
-     * @return self
-     */
-    public function setStringPath($stringPath)
-    {
-        $this->string_path = $stringPath;
-        return $this;
-    }
-
-    /**
-     * Get stringPath
-     *
-     * @return string $stringPath
-     */
-    public function getStringPath()
-    {
-        return $this->string_path;
-    }
-
-    /**
-     * Set numericPath
-     *
-     * @param string $numericPath
-     * @return self
-     */
-    public function setNumericPath($numericPath)
-    {
-        $this->numeric_path = $numericPath;
-        return $this;
-    }
-
-    /**
-     * Get numericPath
-     *
-     * @return string $numericPath
-     */
-    public function getNumericPath()
-    {
-        return $this->numeric_path;
-    }
-
-    /**
      * Set statsPosts
      *
      * @param int $statsPosts
@@ -189,5 +126,35 @@ class Category
     public function getStatsPosts()
     {
         return $this->stats_posts;
+    }
+    
+    /**
+     * Add ancestor
+     *
+     * @param \Gsup\ForumBundle\Document\Category $ancestor
+     */
+    public function addAncestor(\Gsup\ForumBundle\Document\Category $ancestor)
+    {
+        $this->ancestor[] = $ancestor;
+    }
+
+    /**
+     * Remove ancestor
+     *
+     * @param \Gsup\ForumBundle\Document\Category $ancestor
+     */
+    public function removeAncestor(\Gsup\ForumBundle\Document\Category $ancestor)
+    {
+        $this->ancestor->removeElement($ancestor);
+    }
+
+    /**
+     * Get ancestor
+     *
+     * @return \Doctrine\Common\Collections\Collection $ancestor
+     */
+    public function getAncestor()
+    {
+        return $this->ancestor;
     }
 }

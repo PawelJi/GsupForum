@@ -15,6 +15,9 @@ use Symfony\Component\Form\Test\TypeTestCase;
 
 class MarkdownTest extends TypeTestCase
 {
+    /**
+     * @var \Gsup\ForumBundle\Helper\Transformer\Text\Markdown
+     */
     private $_helper;
 
     public function getFixtureContent($key)
@@ -24,7 +27,7 @@ class MarkdownTest extends TypeTestCase
         $markdown = <<< MARKDOWN
 - List item
 
-This is the *first* editor.
+This is the _first_ editor.
 ---------------------------
 
 Just plain **Markdown**, except that the input is sanitized:

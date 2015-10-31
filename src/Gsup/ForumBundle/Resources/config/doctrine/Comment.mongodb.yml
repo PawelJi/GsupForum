@@ -1,0 +1,19 @@
+Gsup\ForumBundle\Document\Comment:
+    fields:
+        id:
+            id: true
+        post_id:
+            type: string
+        content:
+            type: string
+        rate:
+            type: int
+        is_active:
+            type: boolean
+        updated_at:
+            type: timestamp
+        created_at:
+            type: timestamp
+    referenceOne:
+        user:
+            targetDocument: User

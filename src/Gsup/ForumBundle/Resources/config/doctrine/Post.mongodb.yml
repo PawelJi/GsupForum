@@ -33,8 +33,6 @@ Gsup\ForumBundle\Document\Post:
             type: boolean
         is_request_close:
             type: boolean
-        is_answer:
-            type: boolean
         is_resolved:
             type: boolean
         is_closed:
@@ -47,21 +45,17 @@ Gsup\ForumBundle\Document\Post:
             type: timestamp
         created_at:
             type: timestamp
-    embedOne:
+    embedMany:
+        reply:
+            targetDocument: Reply
+        comment:
+            targetDocument: Comment
+    referenceOne:
         category:
             targetDocument: Category
-    embedMany:
-        posts:
-            targetDocument: Post
-        postComment:
-            targetDocument: PostComment
-    referenceOne:
         user:
             targetDocument: User
-            inversedBy: posts
-        userLastUpdated:
+        userLastEdit:
             targetDocument: User
-            inversedBy: postsUpdated
         userLastUpdatedAny:
             targetDocument: User
-            inversedBy: postsUpdatedAny

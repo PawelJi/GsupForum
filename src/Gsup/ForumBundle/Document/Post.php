@@ -12,7 +12,6 @@ namespace Gsup\ForumBundle\Document;
  */
 class Post
 {
-
     /**
      * @var MongoId $id
      */
@@ -74,11 +73,6 @@ class Post
     protected $is_request_close;
 
     /**
-     * @var boolean $is_answer
-     */
-    protected $is_answer;
-
-    /**
      * @var boolean $is_resolved
      */
     protected $is_resolved;
@@ -109,39 +103,39 @@ class Post
     protected $created_at;
 
     /**
-     * @var Gsup\ForumBundle\Document\Category
+     * @var \Gsup\ForumBundle\Document\Reply
+     */
+    protected $reply = array();
+
+    /**
+     * @var \Gsup\ForumBundle\Document\Comment
+     */
+    protected $comment = array();
+
+    /**
+     * @var \Gsup\ForumBundle\Document\Category
      */
     protected $category;
 
     /**
-     * @var Gsup\ForumBundle\Document\Post
-     */
-    protected $posts = array();
-
-    /**
-     * @var Gsup\ForumBundle\Document\PostComment
-     */
-    protected $postComment = array();
-
-    /**
-     * @var Gsup\ForumBundle\Document\User
+     * @var \Gsup\ForumBundle\Document\User
      */
     protected $user;
 
     /**
-     * @var Gsup\ForumBundle\Document\User
+     * @var \Gsup\ForumBundle\Document\User
      */
     protected $userLastUpdated;
 
     /**
-     * @var Gsup\ForumBundle\Document\User
+     * @var \Gsup\ForumBundle\Document\User
      */
     protected $userLastUpdatedAny;
 
     public function __construct()
     {
-        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->postComment = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->reply = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->comment = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
@@ -397,28 +391,6 @@ class Post
     }
 
     /**
-     * Set isAnswer
-     *
-     * @param boolean $isAnswer
-     * @return self
-     */
-    public function setIsAnswer($isAnswer)
-    {
-        $this->is_answer = $isAnswer;
-        return $this;
-    }
-
-    /**
-     * Get isAnswer
-     *
-     * @return boolean $isAnswer
-     */
-    public function getIsAnswer()
-    {
-        return $this->is_answer;
-    }
-
-    /**
      * Set isResolved
      *
      * @param boolean $isResolved
@@ -551,6 +523,66 @@ class Post
     }
 
     /**
+     * Add reply
+     *
+     * @param \Gsup\ForumBundle\Document\Reply $reply
+     */
+    public function addReply(\Gsup\ForumBundle\Document\Reply $reply)
+    {
+        $this->reply[] = $reply;
+    }
+
+    /**
+     * Remove reply
+     *
+     * @param \Gsup\ForumBundle\Document\Reply $reply
+     */
+    public function removeReply(\Gsup\ForumBundle\Document\Reply $reply)
+    {
+        $this->reply->removeElement($reply);
+    }
+
+    /**
+     * Get reply
+     *
+     * @return \Doctrine\Common\Collections\Collection $reply
+     */
+    public function getReply()
+    {
+        return $this->reply;
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \Gsup\ForumBundle\Document\Comment $comment
+     */
+    public function addComment(\Gsup\ForumBundle\Document\Comment $comment)
+    {
+        $this->comment[] = $comment;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \Gsup\ForumBundle\Document\Comment $comment
+     */
+    public function removeComment(\Gsup\ForumBundle\Document\Comment $comment)
+    {
+        $this->comment->removeElement($comment);
+    }
+
+    /**
+     * Get comment
+     *
+     * @return \Doctrine\Common\Collections\Collection $comment
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
      * Set category
      *
      * @param \Gsup\ForumBundle\Document\Category $category
@@ -565,71 +597,11 @@ class Post
     /**
      * Get category
      *
-     * @return Gsup\ForumBundle\Document\Category $category
+     * @return \Gsup\ForumBundle\Document\Category $category
      */
     public function getCategory()
     {
         return $this->category;
-    }
-
-    /**
-     * Add post
-     *
-     * @param \Gsup\ForumBundle\Document\Post $post
-     */
-    public function addPost(\Gsup\ForumBundle\Document\Post $post)
-    {
-        $this->posts[] = $post;
-    }
-
-    /**
-     * Remove post
-     *
-     * @param \Gsup\ForumBundle\Document\Post $post
-     */
-    public function removePost(\Gsup\ForumBundle\Document\Post $post)
-    {
-        $this->posts->removeElement($post);
-    }
-
-    /**
-     * Get posts
-     *
-     * @return \Doctrine\Common\Collections\Collection $posts
-     */
-    public function getPosts()
-    {
-        return $this->posts;
-    }
-
-    /**
-     * Add postComment
-     *
-     * @param \Gsup\ForumBundle\Document\PostComment $postComment
-     */
-    public function addPostComment(\Gsup\ForumBundle\Document\PostComment $postComment)
-    {
-        $this->postComment[] = $postComment;
-    }
-
-    /**
-     * Remove postComment
-     *
-     * @param \Gsup\ForumBundle\Document\PostComment $postComment
-     */
-    public function removePostComment(\Gsup\ForumBundle\Document\PostComment $postComment)
-    {
-        $this->postComment->removeElement($postComment);
-    }
-
-    /**
-     * Get postComment
-     *
-     * @return \Doctrine\Common\Collections\Collection $postComment
-     */
-    public function getPostComment()
-    {
-        return $this->postComment;
     }
 
     /**
@@ -647,7 +619,7 @@ class Post
     /**
      * Get user
      *
-     * @return Gsup\ForumBundle\Document\User $user
+     * @return \Gsup\ForumBundle\Document\User $user
      */
     public function getUser()
     {
@@ -669,7 +641,7 @@ class Post
     /**
      * Get userLastUpdated
      *
-     * @return Gsup\ForumBundle\Document\User $userLastUpdated
+     * @return \Gsup\ForumBundle\Document\User $userLastUpdated
      */
     public function getUserLastUpdated()
     {
@@ -691,11 +663,38 @@ class Post
     /**
      * Get userLastUpdatedAny
      *
-     * @return Gsup\ForumBundle\Document\User $userLastUpdatedAny
+     * @return \Gsup\ForumBundle\Document\User $userLastUpdatedAny
      */
     public function getUserLastUpdatedAny()
     {
         return $this->userLastUpdatedAny;
+    }
+    /**
+     * @var \Gsup\ForumBundle\Document\User
+     */
+    protected $userLastEdit;
+
+
+    /**
+     * Set userLastEdit
+     *
+     * @param \Gsup\ForumBundle\Document\User $userLastEdit
+     * @return self
+     */
+    public function setUserLastEdit(\Gsup\ForumBundle\Document\User $userLastEdit)
+    {
+        $this->userLastEdit = $userLastEdit;
+        return $this;
+    }
+
+    /**
+     * Get userLastEdit
+     *
+     * @return \Gsup\ForumBundle\Document\User $userLastEdit
+     */
+    public function getUserLastEdit()
+    {
+        return $this->userLastEdit;
     }
 
     /**

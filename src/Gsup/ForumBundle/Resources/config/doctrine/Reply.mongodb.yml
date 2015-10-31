@@ -1,4 +1,4 @@
-Gsup\ForumBundle\Document\PostComment:
+Gsup\ForumBundle\Document\Reply:
     fields:
         id:
             id: true
@@ -6,16 +6,23 @@ Gsup\ForumBundle\Document\PostComment:
             type: string
         rate:
             type: int
+        stats_comment:
+            type: int
+        is_authorized_user:
+            type: boolean
         is_active:
             type: boolean
         updated_at:
             type: timestamp
+        updated_any_at:
+            type: timestamp
         created_at:
             type: timestamp
+    embedMany:
+        comment:
+            targetDocument: Comment
     referenceOne:
         user:
             targetDocument: User
-            inversedBy: postComment
-        post:
-            targetDocument: Post
-            inversedBy: postComment
+        userLastEdit:
+            targetDocument: User
