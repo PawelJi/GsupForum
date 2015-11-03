@@ -3,6 +3,7 @@
 namespace Gsup\ForumBundle\Controller;
 
 use Gsup\ForumBundle\Document\Post;
+use Gsup\ForumBundle\Document\Reply;
 use Gsup\ForumBundle\Form\PostType;
 use Gsup\ForumBundle\Form\ReplyType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -45,7 +46,7 @@ class PostController extends Controller
 
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             $this->get('session')->getFlashBag()->add('notice', 'Login or register to add new post.');
-            $this->get('session')->set('postAdd', $post->getId());
+            $this->get('session')->set('addQueue', ['GsupForumBundle:Post', $post->getId()]);
             return $this->redirectToRoute('fos_user_security_login');
         }
 
@@ -86,7 +87,7 @@ class PostController extends Controller
             throw $this->createNotFoundException('The post does not exist.');
         }
 
-        $reply = new Post();
+        $reply = new Reply();
 
         $form = $this->createForm(new ReplyType(), $reply, array(
             'method' => 'POST'
@@ -108,9 +109,7 @@ class PostController extends Controller
             $reply->setIsActive(true);
         }
 
-        $reply->setIsAnswer(true);
-
-        $post->addPost($reply);
+        $post->addReply($reply);
 
         $dm = $this->get('doctrine_mongodb')->getManager();
         $dm->persist($reply);
@@ -118,7 +117,7 @@ class PostController extends Controller
 
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             $this->get('session')->getFlashBag()->add('notice', 'Login or register to add reply.');
-            $this->get('session')->set('postAdd', $reply->getId());
+            $this->get('session')->set('addQueue', ['GsupForumBundle:Reply', $reply->getId()]);
             return $this->redirectToRoute('fos_user_security_login');
         }
 

@@ -12,7 +12,7 @@ namespace Gsup\ForumBundle\Traits;
 
 use Symfony\Component\BrowserKit\Cookie;
 
-trait TestUser
+trait TestUserTrait
 {
     protected function createAuthorizedClient()
     {

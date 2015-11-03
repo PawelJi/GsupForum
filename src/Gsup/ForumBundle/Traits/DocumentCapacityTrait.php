@@ -7,7 +7,7 @@ namespace Gsup\ForumBundle\Traits;
  *
  * @package Gsup\ForumBundle\Traits
  */
-trait DocumentCapacity
+trait DocumentCapacityTrait
 {
     /**
      * Set values from given array.

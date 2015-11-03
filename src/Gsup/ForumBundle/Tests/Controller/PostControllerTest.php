@@ -10,12 +10,12 @@
  
 namespace Gsup\ForumBundle\Tests\Controller;
 
-use Gsup\ForumBundle\Traits\TestUser;
+use Gsup\ForumBundle\Traits\TestUserTrait;
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
 class PostControllerTest extends WebTestCase
 {
-    use TestUser;
+    use TestUserTrait;
 
     public function setUp()
     {

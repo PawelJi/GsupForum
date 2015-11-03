@@ -32,8 +32,7 @@ class LoadPostData extends AbstractFixture implements OrderedFixtureInterface
             $post->setCategory($this->getReference('random-category'));
         }
         $post->setTags(['test' => 'test']);
-        $post->setIsActive(true);
-        $post->setIsAnswer(false);
+        $post->setIsActive(true);;
 
         $manager->persist($post);
 

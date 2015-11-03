@@ -1,7 +1,7 @@
 <?php
 
 namespace Gsup\ForumBundle\Tests\Traits;
-use Gsup\ForumBundle\Traits\DocumentCapacity;
+use Gsup\ForumBundle\Tests\DummyDocument;
 
 /**
  * Description
@@ -13,22 +13,11 @@ use Gsup\ForumBundle\Traits\DocumentCapacity;
  */
 class DocumentCapacityTest extends \PHPUnit_Framework_TestCase
 {
-    use DocumentCapacity;
-
-    /**
-     * @var mixed
-     */
-    private $_testPropertyOne;
-
-    /**
-     * @var mixed
-     */
-    private $_testPropertyTwo;
+    private $document;
 
     public function setUp()
     {
-        $this->_testPropertyOne = null;
-        $this->_testPropertyTwo = null;
+        $this->document = new DummyDocument();
     }
 
     /**
@@ -37,8 +26,8 @@ class DocumentCapacityTest extends \PHPUnit_Framework_TestCase
     public function testSetFromArray($keyValueArray)
     {
         $this->setFromArray($keyValueArray);
-        foreach (['testPropertyOne', 'testPropertyTwo'] as $key) {
-            $getter = 'get'.ucfirst($key);
+        foreach (['name', 'address'] as $key) {
+            $getter = 'get'.$key;
             if (!isset($keyValueArray[$key])) {
                 $this->assertEquals(null, $this->{$getter}());
             } else {
@@ -51,47 +40,15 @@ class DocumentCapacityTest extends \PHPUnit_Framework_TestCase
     {
         return [
             [
-                ['testPropertyOne' => 1, 'testPropertyTwo' => 2],
+                ['name' => 1, 'address' => ''],
             ],
             [
-                ['testPropertyOne' => 'test'],
+                ['name' => 'test'],
             ],
             [
                 []
             ]
         ];
-    }
-
-    /**
-     * @param mixed $testPropertyOne
-     */
-    public function setTestPropertyOne($testPropertyOne)
-    {
-        $this->_testPropertyOne = $testPropertyOne;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTestPropertyOne()
-    {
-        return $this->_testPropertyOne;
-    }
-
-    /**
-     * @param mixed $testPropertyTwo
-     */
-    public function setTestPropertyTwo($testPropertyTwo)
-    {
-        $this->_testPropertyTwo = $testPropertyTwo;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTestPropertyTwo()
-    {
-        return $this->_testPropertyTwo;
     }
 
 } 
