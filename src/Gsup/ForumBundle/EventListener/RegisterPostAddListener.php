@@ -46,15 +46,13 @@ class RegisterPostAddListener implements EventSubscriberInterface
             return;
         }
 
-        if (!($id = $session->get('postAdd'))) {
+        if (!($stash = $session->get('addStash'))) {
             return;
         }
 
-        $session->remove('postAdd');
-
         $dm = $this->_dm->getManager();
 
-        return $dm->getRepository('GsupForumBundle:Post')->find($id);
+        return $dm->getRepository($stash[0])->find($stash[1]);
     }
 
     public function onRegistrationCompleted(FilterUserResponseEvent $event)
@@ -76,5 +74,7 @@ class RegisterPostAddListener implements EventSubscriberInterface
         };
 
         $this->_dm->flush();
+
+        $session->remove('addStash');
     }
 } 

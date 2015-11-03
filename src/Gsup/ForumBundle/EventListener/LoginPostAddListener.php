@@ -50,22 +50,22 @@ class LoginPostAddListener implements EventSubscriberInterface
             return;
         }
 
-        if (!($id = $session->get('postAdd'))) {
+        if (!($stash = $session->get('addStash'))) {
             return;
         }
 
-        $session->remove('postAdd');
+        $document = $this->_dm->getRepository($stash[0])->find($stash[1]);
 
-        $post = $this->_dm->getRepository('GsupForumBundle:Post')->find($id);
-
-        if (!$post) {
+        if (!$document) {
             return;
         }
 
-        $post->setUser($user);
-        $post->setIsActive(true);
+        $document->setUser($user);
+        $document->setIsActive(true);
 
         $this->_dm->flush();
+
+        $session->remove('addStash');
     }
 
     public function onImplicitLogin(UserEvent $event)
