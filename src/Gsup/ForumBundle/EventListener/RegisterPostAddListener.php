@@ -75,6 +75,8 @@ class RegisterPostAddListener implements EventSubscriberInterface
 
         $this->_dm->flush();
 
-        $session->remove('addStash');
+        $event->getRequest()
+            ->getSession()
+            ->remove('addStash');
     }
 } 
