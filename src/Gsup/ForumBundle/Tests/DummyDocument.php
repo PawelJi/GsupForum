@@ -1,7 +1,7 @@
 <?php
 
 namespace Gsup\ForumBundle\Tests;
-use Gsup\ForumBundle\Traits\DocumentCapacity;
+use Gsup\ForumBundle\Traits\DocumentCapacityTrait;
 
 /**
  * Description
@@ -13,7 +13,7 @@ use Gsup\ForumBundle\Traits\DocumentCapacity;
  */
 class DummyDocument
 {
-    use DocumentCapacity;
+    use DocumentCapacityTrait;
 
     /**
      * @var mixed

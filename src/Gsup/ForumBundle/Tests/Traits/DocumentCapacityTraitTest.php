@@ -1,6 +1,7 @@
 <?php
 
 namespace Gsup\ForumBundle\Tests\Traits;
+
 use Gsup\ForumBundle\Tests\DummyDocument;
 
 /**
@@ -11,7 +12,7 @@ use Gsup\ForumBundle\Tests\DummyDocument;
  * @author: Pawel J.
  * @version $Id$
  */
-class DocumentCapacityTest extends \PHPUnit_Framework_TestCase
+class DocumentCapacityTraitTest extends \PHPUnit_Framework_TestCase
 {
     private $document;
 
@@ -25,13 +26,13 @@ class DocumentCapacityTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetFromArray($keyValueArray)
     {
-        $this->setFromArray($keyValueArray);
+        $this->document->setFromArray($keyValueArray);
         foreach (['name', 'address'] as $key) {
             $getter = 'get'.$key;
             if (!isset($keyValueArray[$key])) {
-                $this->assertEquals(null, $this->{$getter}());
+                $this->assertEquals(null, $this->document->{$getter}());
             } else {
-                $this->assertEquals($keyValueArray[$key], $this->{$getter}());
+                $this->assertEquals($keyValueArray[$key], $this->document->{$getter}());
             }
         }
     }
@@ -43,7 +44,7 @@ class DocumentCapacityTest extends \PHPUnit_Framework_TestCase
                 ['name' => 1, 'address' => ''],
             ],
             [
-                ['name' => 'test'],
+                ['name' => 'test']
             ],
             [
                 []
