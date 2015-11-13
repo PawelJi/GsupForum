@@ -1,6 +1,6 @@
 {
-    "name": "toss/forum",
-    "license": "proprietary",
+    "name": "gsup/forum",
+    "license": "MIT",
     "type": "project",
     "autoload": {
         "psr-4": {
@@ -32,15 +32,10 @@
         "liip/imagine-bundle": "*",
         "michelf/php-markdown": "*",
         "league/html-to-markdown": "~4.0",
-        "components/angular.js": "*",
         "doctrine/doctrine-fixtures-bundle": "^2.2",
         "stof/doctrine-extensions-bundle":      "*"
     },
-    "require-dev": {
-        "sensio/generator-bundle": "~2.3",
-        "liip/functional-test-bundle": "^1.2",
-        "hautelook/alice-bundle": "^1.0"
-    },
+    "require-dev": {},
     "scripts": {
         "post-root-package-install": [
             "SymfonyStandard\\Composer::hookRootPackageInstall"

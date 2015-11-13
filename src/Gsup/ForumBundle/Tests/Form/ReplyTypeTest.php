@@ -2,7 +2,7 @@
 
 namespace Gsup\ForumBundle\Tests\Form;
 
-use Gsup\ForumBundle\Document\Post;
+use Gsup\ForumBundle\Document\Reply;
 use Gsup\ForumBundle\Form\ReplyType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
@@ -22,7 +22,7 @@ class ReplyTypeTest extends TypeTestCase
             'content'   => 'test2',
         );
 
-        $post = new Post();
+        $post = new Reply();
 
         $type = new ReplyType();
         $form = $this->factory->create($type, $post);

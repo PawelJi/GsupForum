@@ -14,7 +14,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  * @author: Pawel J.
  * @version $Id$
  */
-class RegisterPostAddListener implements EventSubscriberInterface
+class RegisterAssignContentUserListener implements EventSubscriberInterface
 {
     /**
      * @var \FOS\UserBundle\Model\UserManagerInterface
@@ -26,12 +26,19 @@ class RegisterPostAddListener implements EventSubscriberInterface
      */
     protected $_dm;
 
+    /**
+     * @param UserManagerInterface $userManager
+     * @param DocumentManager $dm
+     */
     public function __construct(UserManagerInterface $userManager, DocumentManager $dm)
     {
         $this->_userManager = $userManager;
         $this->_dm = $dm;
     }
 
+    /**
+     * @return array
+     */
     public static function getSubscribedEvents()
     {
         return array(
@@ -40,6 +47,10 @@ class RegisterPostAddListener implements EventSubscriberInterface
         );
     }
 
+    /**
+     * @param $request
+     * @return mixed
+     */
     private function _getPost($request)
     {
         if (!($session = $request->getSession())) {
@@ -55,6 +66,9 @@ class RegisterPostAddListener implements EventSubscriberInterface
         return $dm->getRepository($stash[0])->find($stash[1]);
     }
 
+    /**
+     * @param FilterUserResponseEvent $event
+     */
     public function onRegistrationCompleted(FilterUserResponseEvent $event)
     {
         if (!$post = $this->_getPost($event->getRequest())) {
@@ -67,6 +81,9 @@ class RegisterPostAddListener implements EventSubscriberInterface
         $this->_dm->flush();
     }
 
+    /**
+     * @param FilterUserResponseEvent $event
+     */
     public function onRegistrationConfirmed(FilterUserResponseEvent $event)
     {
         foreach ($event->getUser()->getPosts() as $post) {
