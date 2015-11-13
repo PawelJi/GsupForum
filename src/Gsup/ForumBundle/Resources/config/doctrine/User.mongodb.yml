@@ -1,4 +1,5 @@
 Gsup\ForumBundle\Document\User:
+    type: document
     fields:
         id:
             id: true

@@ -27,7 +27,7 @@ class ReplyType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Gsup\ForumBundle\Document\Post',
+            'data_class' => 'Gsup\ForumBundle\Document\Reply',
             'validation_groups' => array('reply'),
         ));
     }

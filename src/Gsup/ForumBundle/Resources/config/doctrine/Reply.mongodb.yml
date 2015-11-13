@@ -1,4 +1,5 @@
 Gsup\ForumBundle\Document\Reply:
+    type: embeddedDocument
     fields:
         id:
             id: true

@@ -112,7 +112,6 @@ class PostController extends Controller
         $post->addReply($reply);
 
         $dm = $this->get('doctrine_mongodb')->getManager();
-        $dm->persist($reply);
         $dm->flush();
 
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {

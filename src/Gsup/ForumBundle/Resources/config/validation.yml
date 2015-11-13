@@ -11,3 +11,8 @@ Gsup\ForumBundle\Document\Post:
             - NotBlank: ~
         category:
             - NotBlank: ~
+
+Gsup\ForumBundle\Document\Reply:
+    properties:
+        content:
+            - NotBlank: { groups: [reply] }

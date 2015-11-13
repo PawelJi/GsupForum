@@ -1,4 +1,5 @@
 Gsup\ForumBundle\Document\Post:
+    type: document
     repositoryClass: Gsup\ForumBundle\Repository\PostRepository
     fields:
         id:
