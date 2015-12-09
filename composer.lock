@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3d6327e371d0626a89606987dcc7b8fb",
-    "content-hash": "1cf0fd852194bcbd5e360dc1803001b3",
+    "hash": "aebcb86019c6d5efd99cb5cf979fa4a9",
+    "content-hash": "5ff59a90b1f3763633fcb60dd2dc7b7c",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -46,310 +46,6 @@
                 "transliterator"
             ],
             "time": "2015-09-28 16:26:35"
-        },
-        {
-            "name": "components/angular.js",
-            "version": "1.3.16",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/angular.js.git",
-                "reference": "84d0420402cf02b559d210b7286bd9a30655ca33"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/angular.js/zipball/84d0420402cf02b559d210b7286bd9a30655ca33",
-                "reference": "84d0420402cf02b559d210b7286bd9a30655ca33",
-                "shasum": ""
-            },
-            "type": "component",
-            "extra": {
-                "component": {
-                    "name": "angularjs",
-                    "scripts": [
-                        "angular.js"
-                    ],
-                    "files": [
-                        "angular-animate.js",
-                        "angular-animate.min.js",
-                        "angular-animate.min.js.map",
-                        "angular-cookies.js",
-                        "angular-cookies.min.js",
-                        "angular-cookies.min.js.map",
-                        "angular-csp.css",
-                        "angular-loader.js",
-                        "angular-loader.min.js",
-                        "angular-loader.min.js.map",
-                        "angular-mocks.js",
-                        "angular-resource.js",
-                        "angular-resource.min.js",
-                        "angular-resource.min.js.map",
-                        "angular-route.js",
-                        "angular-route.min.js",
-                        "angular-route.min.js.map",
-                        "angular-sanitize.js",
-                        "angular-sanitize.min.js",
-                        "angular-sanitize.min.js.map",
-                        "angular-scenario.js",
-                        "angular-touch.js",
-                        "angular-touch.min.js",
-                        "angular-touch.min.js.map",
-                        "angular.min.js",
-                        "angular.min.js.map",
-                        "i18n/angular-locale_af-na.js",
-                        "i18n/angular-locale_af-za.js",
-                        "i18n/angular-locale_af.js",
-                        "i18n/angular-locale_am-et.js",
-                        "i18n/angular-locale_am.js",
-                        "i18n/angular-locale_ar-001.js",
-                        "i18n/angular-locale_ar-ae.js",
-                        "i18n/angular-locale_ar-bh.js",
-                        "i18n/angular-locale_ar-dz.js",
-                        "i18n/angular-locale_ar-eg.js",
-                        "i18n/angular-locale_ar-iq.js",
-                        "i18n/angular-locale_ar-jo.js",
-                        "i18n/angular-locale_ar-kw.js",
-                        "i18n/angular-locale_ar-lb.js",
-                        "i18n/angular-locale_ar-ly.js",
-                        "i18n/angular-locale_ar-ma.js",
-                        "i18n/angular-locale_ar-om.js",
-                        "i18n/angular-locale_ar-qa.js",
-                        "i18n/angular-locale_ar-sa.js",
-                        "i18n/angular-locale_ar-sd.js",
-                        "i18n/angular-locale_ar-sy.js",
-                        "i18n/angular-locale_ar-tn.js",
-                        "i18n/angular-locale_ar-ye.js",
-                        "i18n/angular-locale_ar.js",
-                        "i18n/angular-locale_bg-bg.js",
-                        "i18n/angular-locale_bg.js",
-                        "i18n/angular-locale_bn-bd.js",
-                        "i18n/angular-locale_bn-in.js",
-                        "i18n/angular-locale_bn.js",
-                        "i18n/angular-locale_ca-ad.js",
-                        "i18n/angular-locale_ca-es.js",
-                        "i18n/angular-locale_ca.js",
-                        "i18n/angular-locale_cs-cz.js",
-                        "i18n/angular-locale_cs.js",
-                        "i18n/angular-locale_da-dk.js",
-                        "i18n/angular-locale_da.js",
-                        "i18n/angular-locale_de-at.js",
-                        "i18n/angular-locale_de-be.js",
-                        "i18n/angular-locale_de-ch.js",
-                        "i18n/angular-locale_de-de.js",
-                        "i18n/angular-locale_de-li.js",
-                        "i18n/angular-locale_de-lu.js",
-                        "i18n/angular-locale_de.js",
-                        "i18n/angular-locale_el-cy.js",
-                        "i18n/angular-locale_el-gr.js",
-                        "i18n/angular-locale_el.js",
-                        "i18n/angular-locale_en-as.js",
-                        "i18n/angular-locale_en-au.js",
-                        "i18n/angular-locale_en-bb.js",
-                        "i18n/angular-locale_en-be.js",
-                        "i18n/angular-locale_en-bm.js",
-                        "i18n/angular-locale_en-bw.js",
-                        "i18n/angular-locale_en-bz.js",
-                        "i18n/angular-locale_en-ca.js",
-                        "i18n/angular-locale_en-dsrt-us.js",
-                        "i18n/angular-locale_en-dsrt.js",
-                        "i18n/angular-locale_en-fm.js",
-                        "i18n/angular-locale_en-gb.js",
-                        "i18n/angular-locale_en-gu.js",
-                        "i18n/angular-locale_en-gy.js",
-                        "i18n/angular-locale_en-hk.js",
-                        "i18n/angular-locale_en-ie.js",
-                        "i18n/angular-locale_en-in.js",
-                        "i18n/angular-locale_en-iso.js",
-                        "i18n/angular-locale_en-jm.js",
-                        "i18n/angular-locale_en-mh.js",
-                        "i18n/angular-locale_en-mp.js",
-                        "i18n/angular-locale_en-mt.js",
-                        "i18n/angular-locale_en-mu.js",
-                        "i18n/angular-locale_en-na.js",
-                        "i18n/angular-locale_en-nz.js",
-                        "i18n/angular-locale_en-ph.js",
-                        "i18n/angular-locale_en-pk.js",
-                        "i18n/angular-locale_en-pr.js",
-                        "i18n/angular-locale_en-pw.js",
-                        "i18n/angular-locale_en-sg.js",
-                        "i18n/angular-locale_en-tc.js",
-                        "i18n/angular-locale_en-tt.js",
-                        "i18n/angular-locale_en-um.js",
-                        "i18n/angular-locale_en-us.js",
-                        "i18n/angular-locale_en-vg.js",
-                        "i18n/angular-locale_en-vi.js",
-                        "i18n/angular-locale_en-za.js",
-                        "i18n/angular-locale_en-zw.js",
-                        "i18n/angular-locale_en.js",
-                        "i18n/angular-locale_es-419.js",
-                        "i18n/angular-locale_es-ar.js",
-                        "i18n/angular-locale_es-bo.js",
-                        "i18n/angular-locale_es-cl.js",
-                        "i18n/angular-locale_es-co.js",
-                        "i18n/angular-locale_es-cr.js",
-                        "i18n/angular-locale_es-do.js",
-                        "i18n/angular-locale_es-ea.js",
-                        "i18n/angular-locale_es-ec.js",
-                        "i18n/angular-locale_es-es.js",
-                        "i18n/angular-locale_es-gq.js",
-                        "i18n/angular-locale_es-gt.js",
-                        "i18n/angular-locale_es-hn.js",
-                        "i18n/angular-locale_es-ic.js",
-                        "i18n/angular-locale_es-mx.js",
-                        "i18n/angular-locale_es-ni.js",
-                        "i18n/angular-locale_es-pa.js",
-                        "i18n/angular-locale_es-pe.js",
-                        "i18n/angular-locale_es-pr.js",
-                        "i18n/angular-locale_es-py.js",
-                        "i18n/angular-locale_es-sv.js",
-                        "i18n/angular-locale_es-us.js",
-                        "i18n/angular-locale_es-uy.js",
-                        "i18n/angular-locale_es-ve.js",
-                        "i18n/angular-locale_es.js",
-                        "i18n/angular-locale_et-ee.js",
-                        "i18n/angular-locale_et.js",
-                        "i18n/angular-locale_eu-es.js",
-                        "i18n/angular-locale_eu.js",
-                        "i18n/angular-locale_fa-af.js",
-                        "i18n/angular-locale_fa-ir.js",
-                        "i18n/angular-locale_fa.js",
-                        "i18n/angular-locale_fi-fi.js",
-                        "i18n/angular-locale_fi.js",
-                        "i18n/angular-locale_fil-ph.js",
-                        "i18n/angular-locale_fil.js",
-                        "i18n/angular-locale_fr-be.js",
-                        "i18n/angular-locale_fr-bf.js",
-                        "i18n/angular-locale_fr-bi.js",
-                        "i18n/angular-locale_fr-bj.js",
-                        "i18n/angular-locale_fr-bl.js",
-                        "i18n/angular-locale_fr-ca.js",
-                        "i18n/angular-locale_fr-cd.js",
-                        "i18n/angular-locale_fr-cf.js",
-                        "i18n/angular-locale_fr-cg.js",
-                        "i18n/angular-locale_fr-ch.js",
-                        "i18n/angular-locale_fr-ci.js",
-                        "i18n/angular-locale_fr-cm.js",
-                        "i18n/angular-locale_fr-dj.js",
-                        "i18n/angular-locale_fr-fr.js",
-                        "i18n/angular-locale_fr-ga.js",
-                        "i18n/angular-locale_fr-gf.js",
-                        "i18n/angular-locale_fr-gn.js",
-                        "i18n/angular-locale_fr-gp.js",
-                        "i18n/angular-locale_fr-gq.js",
-                        "i18n/angular-locale_fr-km.js",
-                        "i18n/angular-locale_fr-lu.js",
-                        "i18n/angular-locale_fr-mc.js",
-                        "i18n/angular-locale_fr-mf.js",
-                        "i18n/angular-locale_fr-mg.js",
-                        "i18n/angular-locale_fr-ml.js",
-                        "i18n/angular-locale_fr-mq.js",
-                        "i18n/angular-locale_fr-ne.js",
-                        "i18n/angular-locale_fr-re.js",
-                        "i18n/angular-locale_fr-yt.js",
-                        "i18n/angular-locale_fr.js",
-                        "i18n/angular-locale_gl-es.js",
-                        "i18n/angular-locale_gl.js",
-                        "i18n/angular-locale_gsw-ch.js",
-                        "i18n/angular-locale_gsw.js",
-                        "i18n/angular-locale_gu-in.js",
-                        "i18n/angular-locale_gu.js",
-                        "i18n/angular-locale_he-il.js",
-                        "i18n/angular-locale_he.js",
-                        "i18n/angular-locale_hi-in.js",
-                        "i18n/angular-locale_hi.js",
-                        "i18n/angular-locale_hr-hr.js",
-                        "i18n/angular-locale_hr.js",
-                        "i18n/angular-locale_hu-hu.js",
-                        "i18n/angular-locale_hu.js",
-                        "i18n/angular-locale_id-id.js",
-                        "i18n/angular-locale_id.js",
-                        "i18n/angular-locale_in.js",
-                        "i18n/angular-locale_is-is.js",
-                        "i18n/angular-locale_is.js",
-                        "i18n/angular-locale_it-it.js",
-                        "i18n/angular-locale_it-sm.js",
-                        "i18n/angular-locale_it.js",
-                        "i18n/angular-locale_iw.js",
-                        "i18n/angular-locale_ja-jp.js",
-                        "i18n/angular-locale_ja.js",
-                        "i18n/angular-locale_kn-in.js",
-                        "i18n/angular-locale_kn.js",
-                        "i18n/angular-locale_ko-kr.js",
-                        "i18n/angular-locale_ko.js",
-                        "i18n/angular-locale_ln-cd.js",
-                        "i18n/angular-locale_ln.js",
-                        "i18n/angular-locale_lt-lt.js",
-                        "i18n/angular-locale_lt.js",
-                        "i18n/angular-locale_lv-lv.js",
-                        "i18n/angular-locale_lv.js",
-                        "i18n/angular-locale_ml-in.js",
-                        "i18n/angular-locale_ml.js",
-                        "i18n/angular-locale_mr-in.js",
-                        "i18n/angular-locale_mr.js",
-                        "i18n/angular-locale_ms-my.js",
-                        "i18n/angular-locale_ms.js",
-                        "i18n/angular-locale_mt-mt.js",
-                        "i18n/angular-locale_mt.js",
-                        "i18n/angular-locale_nl-cw.js",
-                        "i18n/angular-locale_nl-nl.js",
-                        "i18n/angular-locale_nl-sx.js",
-                        "i18n/angular-locale_nl.js",
-                        "i18n/angular-locale_no.js",
-                        "i18n/angular-locale_or-in.js",
-                        "i18n/angular-locale_or.js",
-                        "i18n/angular-locale_pl-pl.js",
-                        "i18n/angular-locale_pl.js",
-                        "i18n/angular-locale_pt-br.js",
-                        "i18n/angular-locale_pt-pt.js",
-                        "i18n/angular-locale_pt.js",
-                        "i18n/angular-locale_ro-ro.js",
-                        "i18n/angular-locale_ro.js",
-                        "i18n/angular-locale_ru-ru.js",
-                        "i18n/angular-locale_ru.js",
-                        "i18n/angular-locale_sk-sk.js",
-                        "i18n/angular-locale_sk.js",
-                        "i18n/angular-locale_sl-si.js",
-                        "i18n/angular-locale_sl.js",
-                        "i18n/angular-locale_sq-al.js",
-                        "i18n/angular-locale_sq.js",
-                        "i18n/angular-locale_sr-cyrl-rs.js",
-                        "i18n/angular-locale_sr-latn-rs.js",
-                        "i18n/angular-locale_sr.js",
-                        "i18n/angular-locale_sv-se.js",
-                        "i18n/angular-locale_sv.js",
-                        "i18n/angular-locale_sw-tz.js",
-                        "i18n/angular-locale_sw.js",
-                        "i18n/angular-locale_ta-in.js",
-                        "i18n/angular-locale_ta.js",
-                        "i18n/angular-locale_te-in.js",
-                        "i18n/angular-locale_te.js",
-                        "i18n/angular-locale_th-th.js",
-                        "i18n/angular-locale_th.js",
-                        "i18n/angular-locale_tl.js",
-                        "i18n/angular-locale_tr-tr.js",
-                        "i18n/angular-locale_tr.js",
-                        "i18n/angular-locale_uk-ua.js",
-                        "i18n/angular-locale_uk.js",
-                        "i18n/angular-locale_ur-pk.js",
-                        "i18n/angular-locale_ur.js",
-                        "i18n/angular-locale_vi-vn.js",
-                        "i18n/angular-locale_vi.js",
-                        "i18n/angular-locale_zh-cn.js",
-                        "i18n/angular-locale_zh-hans-cn.js",
-                        "i18n/angular-locale_zh-hk.js",
-                        "i18n/angular-locale_zh-tw.js",
-                        "i18n/angular-locale_zh.js",
-                        "i18n/angular-locale_zu-za.js",
-                        "i18n/angular-locale_zu.js"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Shim repository for Angular.js",
-            "homepage": "http://angularjs.org",
-            "time": "2015-06-07 20:10:38"
         },
         {
             "name": "doctrine/annotations",
@@ -421,16 +117,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.5.1",
+            "version": "v1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e"
+                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
-                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/47c7128262da274f590ae6f86eb137a7a64e82af",
+                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af",
                 "shasum": ""
             },
             "require": {
@@ -487,7 +183,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-11-02 18:35:48"
+            "time": "2015-12-03 10:50:37"
         },
         {
             "name": "doctrine/collections",
@@ -557,16 +253,16 @@
         },
         {
             "name": "doctrine/common",
-            "version": "v2.5.1",
+            "version": "v2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "0009b8f0d4a917aabc971fb089eba80e872f83f9"
+                "reference": "311001fd9865a4d0d59efff4eac6d7dcb3f5270c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/0009b8f0d4a917aabc971fb089eba80e872f83f9",
-                "reference": "0009b8f0d4a917aabc971fb089eba80e872f83f9",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/311001fd9865a4d0d59efff4eac6d7dcb3f5270c",
+                "reference": "311001fd9865a4d0d59efff4eac6d7dcb3f5270c",
                 "shasum": ""
             },
             "require": {
@@ -583,7 +279,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6.x-dev"
+                    "dev-master": "2.5.x-dev"
                 }
             },
             "autoload": {
@@ -626,7 +322,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-08-31 13:00:22"
+            "time": "2015-12-04 12:49:42"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -758,16 +454,16 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "a5b3ba908ba68f3e14e42762a7b940fde65ed7da"
+                "reference": "c4ffef2b2296e9d0179eb0b5248e5ae25c9bba3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/a5b3ba908ba68f3e14e42762a7b940fde65ed7da",
-                "reference": "a5b3ba908ba68f3e14e42762a7b940fde65ed7da",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/c4ffef2b2296e9d0179eb0b5248e5ae25c9bba3b",
+                "reference": "c4ffef2b2296e9d0179eb0b5248e5ae25c9bba3b",
                 "shasum": ""
             },
             "require": {
@@ -832,28 +528,27 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2015-11-04 21:33:02"
+            "time": "2015-11-16 17:11:46"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineCacheBundle.git",
-                "reference": "3233bc78e222d528ca89a6a47d48d6f37888e95e"
+                "reference": "030ff41ef1db66370b36467086bfb817a661fe6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineCacheBundle/zipball/3233bc78e222d528ca89a6a47d48d6f37888e95e",
-                "reference": "3233bc78e222d528ca89a6a47d48d6f37888e95e",
+                "url": "https://api.github.com/repos/doctrine/DoctrineCacheBundle/zipball/030ff41ef1db66370b36467086bfb817a661fe6a",
+                "reference": "030ff41ef1db66370b36467086bfb817a661fe6a",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.4.2",
                 "doctrine/inflector": "~1.0",
                 "php": ">=5.3.2",
-                "symfony/doctrine-bridge": "~2.2|~3.0",
-                "symfony/security-acl": "~2.3|~3.0"
+                "symfony/doctrine-bridge": "~2.2|~3.0"
             },
             "require-dev": {
                 "instaclick/coding-standard": "~1.1",
@@ -866,13 +561,17 @@
                 "symfony/finder": "~2.2|~3.0",
                 "symfony/framework-bundle": "~2.2|~3.0",
                 "symfony/phpunit-bridge": "~2.7|~3.0",
+                "symfony/security-acl": "~2.3|~3.0",
                 "symfony/validator": "~2.2|~3.0",
                 "symfony/yaml": "~2.2|~3.0"
+            },
+            "suggest": {
+                "symfony/security-acl": "For using this bundle to cache ACLs"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -916,7 +615,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-11-05 13:48:27"
+            "time": "2015-11-27 04:59:07"
         },
         {
             "name": "doctrine/doctrine-fixtures-bundle",
@@ -1152,16 +851,16 @@
         },
         {
             "name": "doctrine/mongodb",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb.git",
-                "reference": "05869c503605d9f29a469393a2e2d901959930ef"
+                "reference": "7a724d9f200b032afc69ee1ad373f6fe5bcbdd9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/05869c503605d9f29a469393a2e2d901959930ef",
-                "reference": "05869c503605d9f29a469393a2e2d901959930ef",
+                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/7a724d9f200b032afc69ee1ad373f6fe5bcbdd9a",
+                "reference": "7a724d9f200b032afc69ee1ad373f6fe5bcbdd9a",
                 "shasum": ""
             },
             "require": {
@@ -1218,7 +917,7 @@
                 "mongodb",
                 "persistence"
             ],
-            "time": "2015-08-18 08:33:01"
+            "time": "2015-11-24 13:28:35"
         },
         {
             "name": "doctrine/mongodb-odm",
@@ -1226,12 +925,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "cb327d1e15a17159247d70255b7fab6bea5ad4b0"
+                "reference": "2d99c1ee4fb575a1e340bec9771afe9a148c0aab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/cb327d1e15a17159247d70255b7fab6bea5ad4b0",
-                "reference": "cb327d1e15a17159247d70255b7fab6bea5ad4b0",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/2d99c1ee4fb575a1e340bec9771afe9a148c0aab",
+                "reference": "2d99c1ee4fb575a1e340bec9771afe9a148c0aab",
                 "shasum": ""
             },
             "require": {
@@ -1300,7 +999,7 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2015-11-03 14:58:21"
+            "time": "2015-12-01 10:44:56"
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
@@ -1317,8 +1016,9 @@
                 "shasum": ""
             },
             "require": {
-                "doctrine/mongodb-odm": "~1.0.0-beta10@dev",
+                "doctrine/mongodb-odm": "~1.0",
                 "php": ">=5.3.2",
+                "psr/log": "~1.0",
                 "symfony/config": "~2.2",
                 "symfony/console": "~2.1",
                 "symfony/dependency-injection": "~2.2",
@@ -1374,16 +1074,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.5.1",
+            "version": "v2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "e6a83bedbe67579cb0bfb688e982e617943a2945"
+                "reference": "464b5fdbfbbeb4a65465ac173c4c5d90960f41ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/e6a83bedbe67579cb0bfb688e982e617943a2945",
-                "reference": "e6a83bedbe67579cb0bfb688e982e617943a2945",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/464b5fdbfbbeb4a65465ac173c4c5d90960f41ff",
+                "reference": "464b5fdbfbbeb4a65465ac173c4c5d90960f41ff",
                 "shasum": ""
             },
             "require": {
@@ -1394,12 +1094,12 @@
                 "doctrine/instantiator": "~1.0.1",
                 "ext-pdo": "*",
                 "php": ">=5.4",
-                "symfony/console": "~2.5"
+                "symfony/console": "~2.5|~3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0",
                 "satooshi/php-coveralls": "dev-master",
-                "symfony/yaml": "~2.1"
+                "symfony/yaml": "~2.3|~3.0"
             },
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
@@ -1447,7 +1147,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2015-08-31 12:59:39"
+            "time": "2015-11-23 12:44:25"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1455,26 +1155,28 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "45d6f40178216a840885b4ca6d7de9e67068568a"
+                "reference": "e39b040e272c72f0a090c67d802e1d3b2d0b0313"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/45d6f40178216a840885b4ca6d7de9e67068568a",
-                "reference": "45d6f40178216a840885b4ca6d7de9e67068568a",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/e39b040e272c72f0a090c67d802e1d3b2d0b0313",
+                "reference": "e39b040e272c72f0a090c67d802e1d3b2d0b0313",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9",
-                "symfony/form": "~2.3",
-                "symfony/framework-bundle": "~2.3",
-                "symfony/security-bundle": "~2.3",
-                "symfony/twig-bundle": "~2.3"
+                "symfony/form": "~2.3|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0",
+                "symfony/security-bundle": "~2.3|~3.0",
+                "symfony/twig-bundle": "~2.3|~3.0"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "~1.3",
                 "swiftmailer/swiftmailer": "~4.3|~5",
-                "symfony/validator": "~2.3",
-                "symfony/yaml": "~2.3",
+                "symfony/console": "~2.3|~3.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
+                "symfony/validator": "~2.3|~3.0",
+                "symfony/yaml": "~2.3|~3.0",
                 "willdurand/propel-typehintable-behavior": "~1.0"
             },
             "suggest": {
@@ -1514,20 +1216,20 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-11-03 10:24:23"
+            "time": "2015-12-05 09:38:57"
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.4.7",
+            "version": "v2.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "1a86ba1c7426238b4f765089e0af51174a38af7f"
+                "reference": "04ac4d1cdbdc610816562344c7ed74aecf2cd1ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/1a86ba1c7426238b4f765089e0af51174a38af7f",
-                "reference": "1a86ba1c7426238b4f765089e0af51174a38af7f",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/04ac4d1cdbdc610816562344c7ed74aecf2cd1ca",
+                "reference": "04ac4d1cdbdc610816562344c7ed74aecf2cd1ca",
                 "shasum": ""
             },
             "require": {
@@ -1593,7 +1295,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2015-09-28 16:39:27"
+            "time": "2015-11-30 18:58:48"
         },
         {
             "name": "imagine/imagine",
@@ -1944,21 +1646,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "a07920b10a3b888abe7c47c7aecf56f69553f707"
+                "reference": "675a8f87d972713b1abec06e5ed63043e7fd5aec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/a07920b10a3b888abe7c47c7aecf56f69553f707",
-                "reference": "a07920b10a3b888abe7c47c7aecf56f69553f707",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/675a8f87d972713b1abec06e5ed63043e7fd5aec",
+                "reference": "675a8f87d972713b1abec06e5ed63043e7fd5aec",
                 "shasum": ""
             },
             "require": {
                 "knplabs/knp-menu": "~2.1",
-                "symfony/framework-bundle": "~2.3"
+                "symfony/framework-bundle": "~2.3|~3.0"
             },
             "require-dev": {
-                "symfony/expression-language": "~2.4",
-                "symfony/phpunit-bridge": "~2.7"
+                "symfony/expression-language": "~2.4|~3.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -1993,7 +1695,7 @@
             "keywords": [
                 "menu"
             ],
-            "time": "2015-10-22 10:06:42"
+            "time": "2015-11-13 10:51:46"
         },
         {
             "name": "knplabs/knp-paginator-bundle",
@@ -2001,22 +1703,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpPaginatorBundle.git",
-                "reference": "4a1daf55560ca7cf9c13b357135d72f4dc13375f"
+                "reference": "5147740faff4d32e6f42acf64475314c35320fa4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/4a1daf55560ca7cf9c13b357135d72f4dc13375f",
-                "reference": "4a1daf55560ca7cf9c13b357135d72f4dc13375f",
+                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/5147740faff4d32e6f42acf64475314c35320fa4",
+                "reference": "5147740faff4d32e6f42acf64475314c35320fa4",
                 "shasum": ""
             },
             "require": {
                 "knplabs/knp-components": "~1.2",
                 "php": ">=5.3.3",
-                "symfony/framework-bundle": "~2.3",
-                "twig/twig": "~1.12"
+                "symfony/framework-bundle": "~2.3|~3.0",
+                "twig/twig": "~1.12|~2"
             },
             "require-dev": {
-                "symfony/expression-language": "~2.4"
+                "symfony/expression-language": "~2.4|~3.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -2054,42 +1756,41 @@
                 "pagination",
                 "paginator"
             ],
-            "time": "2015-09-07 04:31:31"
+            "time": "2015-11-23 17:51:40"
         },
         {
             "name": "kriswallsmith/assetic",
-            "version": "v1.3.1",
+            "version": "v1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5"
+                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
-                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/9928f7c4ad98b234e3559d1049abd13387f86db5",
+                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.1",
-                "symfony/process": "~2.1"
+                "symfony/process": "~2.1|~3.0"
             },
             "conflict": {
-                "twig/twig": "<1.12"
+                "twig/twig": "<1.23"
             },
             "require-dev": {
-                "cssmin/cssmin": "*",
-                "joliclic/javascript-packer": "*",
-                "kamicane/packager": "*",
+                "cssmin/cssmin": "3.0.1",
+                "joliclic/javascript-packer": "1.1",
+                "kamicane/packager": "1.0",
                 "leafo/lessphp": "^0.3.7",
-                "leafo/scssphp": "*@dev",
-                "leafo/scssphp-compass": "*@dev",
-                "mrclay/minify": "*",
+                "leafo/scssphp": "~0.1",
+                "mrclay/minify": "~2.2",
                 "patchwork/jsqueeze": "~1.0|~2.0",
                 "phpunit/phpunit": "~4.8",
                 "psr/log": "~1.0",
-                "ptachoire/cssembed": "*",
-                "symfony/phpunit-bridge": "~2.7",
+                "ptachoire/cssembed": "~1.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
                 "twig/twig": "~1.8|~2.0"
             },
             "suggest": {
@@ -2132,20 +1833,20 @@
                 "compression",
                 "minification"
             ],
-            "time": "2015-10-15 01:33:42"
+            "time": "2015-11-12 13:51:40"
         },
         {
             "name": "league/html-to-markdown",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/html-to-markdown.git",
-                "reference": "c0bfce7e90e4ad0dcafda75b9f883c068c62d6c6"
+                "reference": "01bbfe039d9b97526e3f3a3ee32543fc1d8dba00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/html-to-markdown/zipball/c0bfce7e90e4ad0dcafda75b9f883c068c62d6c6",
-                "reference": "c0bfce7e90e4ad0dcafda75b9f883c068c62d6c6",
+                "url": "https://api.github.com/repos/thephpleague/html-to-markdown/zipball/01bbfe039d9b97526e3f3a3ee32543fc1d8dba00",
+                "reference": "01bbfe039d9b97526e3f3a3ee32543fc1d8dba00",
                 "shasum": ""
             },
             "require": {
@@ -2196,7 +1897,7 @@
                 "html",
                 "markdown"
             ],
-            "time": "2015-10-29 21:46:33"
+            "time": "2015-11-20 16:20:25"
         },
         {
             "name": "liip/imagine-bundle",
@@ -2561,17 +2262,17 @@
         },
         {
             "name": "sensio/distribution-bundle",
-            "version": "v4.0.3",
+            "version": "v4.0.4",
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "2d061c01e708c83ede4720e2551d9449bf606c0a"
+                "reference": "cc0c9478da84f051da4465cf3a67f537ae758b13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/2d061c01e708c83ede4720e2551d9449bf606c0a",
-                "reference": "2d061c01e708c83ede4720e2551d9449bf606c0a",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/cc0c9478da84f051da4465cf3a67f537ae758b13",
+                "reference": "cc0c9478da84f051da4465cf3a67f537ae758b13",
                 "shasum": ""
             },
             "require": {
@@ -2617,7 +2318,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2015-10-27 18:48:08"
+            "time": "2015-11-26 18:10:31"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -2834,25 +2535,25 @@
         },
         {
             "name": "symfony/assetic-bundle",
-            "version": "v2.7.0",
+            "version": "v2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/assetic-bundle.git",
-                "reference": "3ae5c8ca3079b6e0033cc9fbfb6500e2bc964da5"
+                "reference": "d885ec8451d5a7b077bda81bb19ac9fbff9cdc76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/assetic-bundle/zipball/3ae5c8ca3079b6e0033cc9fbfb6500e2bc964da5",
-                "reference": "3ae5c8ca3079b6e0033cc9fbfb6500e2bc964da5",
+                "url": "https://api.github.com/repos/symfony/assetic-bundle/zipball/d885ec8451d5a7b077bda81bb19ac9fbff9cdc76",
+                "reference": "d885ec8451d5a7b077bda81bb19ac9fbff9cdc76",
                 "shasum": ""
             },
             "require": {
                 "kriswallsmith/assetic": "~1.3",
                 "php": ">=5.3.0",
-                "symfony/console": "~2.3",
-                "symfony/dependency-injection": "~2.3",
-                "symfony/framework-bundle": "~2.3",
-                "symfony/yaml": "~2.3"
+                "symfony/console": "~2.3|~3.0",
+                "symfony/dependency-injection": "~2.3|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0",
+                "symfony/yaml": "~2.3|~3.0"
             },
             "conflict": {
                 "kriswallsmith/spork": "<=0.2",
@@ -2861,11 +2562,11 @@
             "require-dev": {
                 "kriswallsmith/spork": "~0.3",
                 "patchwork/jsqueeze": "~1.0",
-                "symfony/class-loader": "~2.3",
-                "symfony/css-selector": "~2.3",
-                "symfony/dom-crawler": "~2.3",
-                "symfony/phpunit-bridge": "~2.7",
-                "symfony/twig-bundle": "~2.3"
+                "symfony/class-loader": "~2.3|~3.0",
+                "symfony/css-selector": "~2.3|~3.0",
+                "symfony/dom-crawler": "~2.3|~3.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
+                "symfony/twig-bundle": "~2.3|~3.0"
             },
             "suggest": {
                 "kriswallsmith/spork": "to be able to dump assets in parallel",
@@ -2900,33 +2601,33 @@
                 "compression",
                 "minification"
             ],
-            "time": "2015-09-01 00:05:29"
+            "time": "2015-11-17 09:45:47"
         },
         {
             "name": "symfony/monolog-bundle",
-            "version": "2.8.1",
+            "version": "v2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/monolog-bundle.git",
-                "reference": "7117b9a145722e3c5768db4585f6ad0643ed5c4a"
+                "reference": "84785c4d44801c4dd82829fa2e1820cacfe2c46f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/7117b9a145722e3c5768db4585f6ad0643ed5c4a",
-                "reference": "7117b9a145722e3c5768db4585f6ad0643ed5c4a",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/84785c4d44801c4dd82829fa2e1820cacfe2c46f",
+                "reference": "84785c4d44801c4dd82829fa2e1820cacfe2c46f",
                 "shasum": ""
             },
             "require": {
                 "monolog/monolog": "~1.8",
                 "php": ">=5.3.2",
-                "symfony/config": "~2.3|3.*",
-                "symfony/dependency-injection": "~2.3|3.*",
-                "symfony/http-kernel": "~2.3|3.*",
-                "symfony/monolog-bridge": "~2.3|3.*"
+                "symfony/config": "~2.3|~3.0",
+                "symfony/dependency-injection": "~2.3|~3.0",
+                "symfony/http-kernel": "~2.3|~3.0",
+                "symfony/monolog-bridge": "~2.3|~3.0"
             },
             "require-dev": {
-                "symfony/console": "~2.3|3.*",
-                "symfony/yaml": "~2.3"
+                "symfony/console": "~2.3|~3.0",
+                "symfony/yaml": "~2.3|~3.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -2959,24 +2660,24 @@
                 "log",
                 "logging"
             ],
-            "time": "2015-10-02 11:51:59"
+            "time": "2015-11-17 10:02:29"
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v2.7.6",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "896bbd1742a6ecd2f7904167bdb6bf88eb6cfbe4"
+                "reference": "e960e64acbed50e49818eb78840486c8d7fe1bed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/896bbd1742a6ecd2f7904167bdb6bf88eb6cfbe4",
-                "reference": "896bbd1742a6ecd2f7904167bdb6bf88eb6cfbe4",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/e960e64acbed50e49818eb78840486c8d7fe1bed",
+                "reference": "e960e64acbed50e49818eb78840486c8d7fe1bed",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "suggest": {
                 "symfony/debug": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
@@ -2993,7 +2694,10 @@
                 ],
                 "psr-4": {
                     "Symfony\\Bridge\\PhpUnit\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3011,32 +2715,32 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2015-09-27 10:08:51"
+            "time": "2015-11-06 10:15:01"
         },
         {
             "name": "symfony/swiftmailer-bundle",
-            "version": "v2.3.8",
+            "version": "v2.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/swiftmailer-bundle.git",
-                "reference": "970b13d01871207e81d17b17ddda025e7e21e797"
+                "reference": "3d21ada19f23631f558ad6df653b168e35362e78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/970b13d01871207e81d17b17ddda025e7e21e797",
-                "reference": "970b13d01871207e81d17b17ddda025e7e21e797",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/3d21ada19f23631f558ad6df653b168e35362e78",
+                "reference": "3d21ada19f23631f558ad6df653b168e35362e78",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "swiftmailer/swiftmailer": ">=4.2.0,~5.0",
-                "symfony/swiftmailer-bridge": "~2.1"
+                "symfony/config": "~2.3|~3.0",
+                "symfony/dependency-injection": "~2.3|~3.0",
+                "symfony/http-kernel": "~2.3|~3.0",
+                "symfony/yaml": "~2.3|~3.0"
             },
             "require-dev": {
-                "symfony/config": "~2.1",
-                "symfony/dependency-injection": "~2.1",
-                "symfony/http-kernel": "~2.1",
-                "symfony/yaml": "~2.1"
+                "symfony/phpunit-bridge": "~2.7|~3.0"
             },
             "suggest": {
                 "psr/log": "Allows logging"
@@ -3068,27 +2772,27 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2014-12-01 17:44:50"
+            "time": "2015-11-28 10:59:29"
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.7.6",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "66b2e9662c44d478b69e48278aa54079a006eb42"
+                "reference": "cc69dbd24b4b2e6de60b2414ef95da2794f459a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/66b2e9662c44d478b69e48278aa54079a006eb42",
-                "reference": "66b2e9662c44d478b69e48278aa54079a006eb42",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/cc69dbd24b4b2e6de60b2414ef95da2794f459a2",
+                "reference": "cc69dbd24b4b2e6de60b2414ef95da2794f459a2",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.4",
                 "php": ">=5.3.9",
                 "psr/log": "~1.0",
-                "twig/twig": "~1.20|~2.0"
+                "twig/twig": "~1.23|~2.0"
             },
             "replace": {
                 "symfony/asset": "self.version",
@@ -3168,6 +2872,9 @@
                 ],
                 "files": [
                     "src/Symfony/Component/Intl/Resources/stubs/functions.php"
+                ],
+                "exclude-from-classmap": [
+                    "**/Tests/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3189,20 +2896,20 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-10-27 19:07:24"
+            "time": "2015-11-23 11:58:08"
         },
         {
             "name": "twbs/bootstrap-sass",
-            "version": "v3.3.5",
+            "version": "v3.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap-sass.git",
-                "reference": "d64d48fd23c9624cc5c996e6516b7dc33fde5919"
+                "reference": "446b41a5af0f20f139a6d33ded2a62101c3bd5a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap-sass/zipball/d64d48fd23c9624cc5c996e6516b7dc33fde5919",
-                "reference": "d64d48fd23c9624cc5c996e6516b7dc33fde5919",
+                "url": "https://api.github.com/repos/twbs/bootstrap-sass/zipball/446b41a5af0f20f139a6d33ded2a62101c3bd5a1",
+                "reference": "446b41a5af0f20f139a6d33ded2a62101c3bd5a1",
                 "shasum": ""
             },
             "type": "library",
@@ -3235,14 +2942,14 @@
                     "name": "Jacob Thornton"
                 }
             ],
-            "description": "bootstrap-sass is a Sass-powered version of Bootstrap, ready to drop right into your Sass powered applications.",
+            "description": "bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.",
             "homepage": "http://github.com/twbs/bootstrap-sass",
             "keywords": [
                 "bootstrap",
                 "css",
                 "sass"
             ],
-            "time": "2015-06-16 16:29:50"
+            "time": "2015-11-24 23:06:35"
         },
         {
             "name": "twig/twig",
@@ -3510,23 +3217,24 @@
         },
         {
             "name": "liip/functional-test-bundle",
-            "version": "1.2.2",
+            "version": "1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/liip/LiipFunctionalTestBundle.git",
-                "reference": "57ef24d843d8e3133b201f7bfe722dcea115a546"
+                "reference": "3ae06e2063a528898f45efbd83746e2707861250"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liip/LiipFunctionalTestBundle/zipball/57ef24d843d8e3133b201f7bfe722dcea115a546",
-                "reference": "57ef24d843d8e3133b201f7bfe722dcea115a546",
+                "url": "https://api.github.com/repos/liip/LiipFunctionalTestBundle/zipball/3ae06e2063a528898f45efbd83746e2707861250",
+                "reference": "3ae06e2063a528898f45efbd83746e2707861250",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "2.*",
-                "php": ">=5.3.2",
-                "symfony/browser-kit": "~2.0",
-                "symfony/framework-bundle": "~2.0"
+                "doctrine/common": "~2.0",
+                "php": "^5.3.9|^7.0",
+                "symfony/browser-kit": "~2.3|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0",
+                "symfony/validator": "~2.5|~3.0"
             },
             "suggest": {
                 "doctrine/dbal": "Required when using the fixture loading functionality with an ORM and SQLite",
@@ -3537,7 +3245,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -3563,7 +3271,7 @@
             "keywords": [
                 "Symfony2"
             ],
-            "time": "2015-05-09 08:22:16"
+            "time": "2015-12-06 09:39:55"
         },
         {
             "name": "nelmio/alice",

@@ -61,11 +61,11 @@ class LoginAssignContentUserListener implements EventSubscriberInterface
             return;
         }
 
-        if (!($stash = $session->get('addStash'))) {
+        if (!($stack = $session->get('assignUserStack'))) {
             return;
         }
 
-        $document = $this->_dm->getRepository($stash[0])->find($stash[1]);
+        $document = $this->_dm->getRepository($stack[0])->find($stack[1]);
 
         if (!$document) {
             return;
@@ -76,7 +76,7 @@ class LoginAssignContentUserListener implements EventSubscriberInterface
 
         $this->_dm->flush();
 
-        $session->remove('addStash');
+        $session->remove('assignUserStack');
     }
 
     /**

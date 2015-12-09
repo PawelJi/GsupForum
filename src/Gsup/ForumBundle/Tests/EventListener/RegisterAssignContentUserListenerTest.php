@@ -1,16 +1,11 @@
 <?php
-/**
- * Description
- *
- * @author: Pawel Jablonski <dev.pawel@gmail.com>
- */
-
 
 namespace Gsup\ForumBundle\Tests\EventListener;
 
 /**
- * Class RegisterAssignContentUserListenerTest
+ * RegisterAssignContentUserListenerTest class.
  * @package Gsup\ForumBundle\Tests\EventListener
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
  */
 class RegisterAssignContentUserListenerTest extends \PHPUnit_Framework_TestCase
 {

@@ -46,7 +46,7 @@ class PostController extends Controller
 
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             $this->get('session')->getFlashBag()->add('notice', 'Login or register to add new post.');
-            $this->get('session')->set('addStash', ['GsupForumBundle:Post', $post->getId()]);
+            $this->get('session')->set('assignUserStack', ['GsupForumBundle:Post', $post->getId()]);
             return $this->redirectToRoute('fos_user_security_login');
         }
 
@@ -116,7 +116,7 @@ class PostController extends Controller
 
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             $this->get('session')->getFlashBag()->add('notice', 'Login or register to add reply.');
-            $this->get('session')->set('addStash', ['GsupForumBundle:Reply', $reply->getId()]);
+            $this->get('session')->set('assignUserStack', ['GsupForumBundle:Reply', $reply->getId()]);
             return $this->redirectToRoute('fos_user_security_login');
         }
 

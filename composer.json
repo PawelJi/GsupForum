@@ -35,7 +35,11 @@
         "doctrine/doctrine-fixtures-bundle": "^2.2",
         "stof/doctrine-extensions-bundle":      "*"
     },
-    "require-dev": {},
+    "require-dev": {
+        "sensio/generator-bundle": "~2.3",
+        "liip/functional-test-bundle": "^1.2",
+        "hautelook/alice-bundle": "^1.0"
+    },
     "scripts": {
         "post-root-package-install": [
             "SymfonyStandard\\Composer::hookRootPackageInstall"
