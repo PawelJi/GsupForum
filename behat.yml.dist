@@ -1,0 +1,6 @@
+# This file is part of the GsupForum package.
+# (c) Paweł J
+
+default:
+    extensions:
+        Behat\Symfony2Extension: ~
