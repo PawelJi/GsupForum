@@ -4,6 +4,7 @@ namespace Gsup\ForumBundle\Tests\EventListener;
 
 use FOS\UserBundle\Event\UserEvent;
 use Gsup\ForumBundle\Document\Post;
+use Gsup\ForumBundle\Document\User;
 use Gsup\ForumBundle\EventListener\LoginAssignContentUserListener;
 
 /**
@@ -24,7 +25,9 @@ class LoginAssignContentUserListenerTest extends \PHPUnit_Framework_TestCase
 
     public function testImplicitLogin()
     {
-        $userManager = $this->getMock('FOS\UserBundle\Model\UserManager');
+        $userManager = $this->getMockBuilder('FOS\UserBundle\Model\UserManager')
+            ->disableOriginalConstructor()
+            ->getMock();
 
         $dmMock = $this->getMockBuilder('Doctrine\ODM\MongoDB\DocumentManager')
             ->disableOriginalConstructor()
@@ -37,11 +40,11 @@ class LoginAssignContentUserListenerTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $document = new Post();
+        $post = new Post();
 
         $repository->expects($this->once())
                 ->method('find')
-                ->willReturn($document)
+                ->willReturn($post)
         ;
 
         $dmMock->expects($this->once())
@@ -50,14 +53,11 @@ class LoginAssignContentUserListenerTest extends \PHPUnit_Framework_TestCase
 
         $this->listener = new LoginAssignContentUserListener($userManager, $dmMock);
 
-        $user = $this->getMock('FOS\UserBundle\Model\UserInterface');
-        $user
-            ->expects($this->once())
-            ->method('isEnabled')
-            ->willReturn(true);
+        $user = new User();
 
-        $session = $this->getMock('Symfony\Component\HttpFoundation\Session');
-        $session->method('get')
+        $session = $this->getMock('Symfony\Component\HttpFoundation\Session\Session');
+        $session->expects($this->once())
+            ->method('get')
             ->willReturn(['Gsup\ForumBundle\Document\Post', 1]);
 
         $session
@@ -72,7 +72,7 @@ class LoginAssignContentUserListenerTest extends \PHPUnit_Framework_TestCase
 
         $this->listener->onImplicitLogin($this->event);
 
-        $this->assertEquals($user, $document->getUser());
+        $this->assertEquals($user, $post->getUser());
     }
 
 }

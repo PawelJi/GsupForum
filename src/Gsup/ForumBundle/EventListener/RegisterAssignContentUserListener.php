@@ -4,7 +4,10 @@ namespace Gsup\ForumBundle\EventListener;
 
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
+use FOS\UserBundle\Model\UserManagerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Doctrine\ODM\MongoDB\DocumentManager;
+
 
  /**
  * Description
@@ -16,14 +19,10 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class RegisterAssignContentUserListener implements EventSubscriberInterface
 {
-    /**
-     * @var \FOS\UserBundle\Model\UserManagerInterface
-     */
+    /** @var UserManagerInterface */
     protected $_userManager;
 
-    /**
-     * @var \Doctrine\ODM\MongoDB\DocumentManager
-     */
+    /** @var DocumentManager */
     protected $_dm;
 
     /**
@@ -56,14 +55,11 @@ class RegisterAssignContentUserListener implements EventSubscriberInterface
         if (!($session = $request->getSession())) {
             return;
         }
-
-        if (!($stash = $session->get('addStash'))) {
+        if (!($stack = $session->get('assignUserStack'))) {
             return;
         }
 
-        $dm = $this->_dm->getManager();
-
-        return $dm->getRepository($stash[0])->find($stash[1]);
+        return $this->_dm->getRepository($stack[0])->find($stack[1]);
     }
 
     /**
@@ -71,14 +67,18 @@ class RegisterAssignContentUserListener implements EventSubscriberInterface
      */
     public function onRegistrationCompleted(FilterUserResponseEvent $event)
     {
-        if (!$post = $this->_getPost($event->getRequest())) {
+        $request = $event->getRequest();
+
+        if (!$post = $this->_getPost($request)) {
             return;
-        };
+        }
 
         $post->setUser($event->getUser());
         $post->setIsActive(false);
 
         $this->_dm->flush();
+
+        $request->getSession()->remove('assignUserStack');
     }
 
     /**
@@ -86,14 +86,13 @@ class RegisterAssignContentUserListener implements EventSubscriberInterface
      */
     public function onRegistrationConfirmed(FilterUserResponseEvent $event)
     {
-        foreach ($event->getUser()->getPosts() as $post) {
+        $posts = $this->_dm->getRepository('GsupForumBundle:Post')
+            ->findAllInActiveByUser($event->getUser());
+
+        foreach ($posts as $post) {
             $post->setIsActive(true);
-        };
+        }
 
         $this->_dm->flush();
-
-        $event->getRequest()
-            ->getSession()
-            ->remove('addStash');
     }
 } 

@@ -41,4 +41,18 @@ class PostRepository extends DocumentRepository
             ->getQuery()
             ->getSingleResult();
     }
+
+    /**
+     * @param $user
+     * @return array|null|object
+     */
+    public function findAllInActiveByUser($user)
+    {
+        return $this->createQueryBuilder()
+//            ->field('user.$id')->equals(new \MongoId($userId))
+            ->field('user')->references($user)
+            ->field('is_active')->equals(false)
+            ->getQuery()
+            ->execute();
+    }
 }
