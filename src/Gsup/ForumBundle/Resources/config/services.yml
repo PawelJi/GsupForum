@@ -1,12 +1,12 @@
 services:
     gsup_forum.login:
         class: Gsup\ForumBundle\EventListener\LoginAssignContentUserListener
-        arguments: [@fos_user.user_manager, @doctrine.odm.mongodb.document_manager]
+        arguments: ["@fos_user.user_manager", "@doctrine.odm.mongodb.document_manager"]
         tags:
             - { name: kernel.event_subscriber }
     gsup_forum.register:
         class: Gsup\ForumBundle\EventListener\RegisterAssignContentUserListener
-        arguments: [@fos_user.user_manager, @doctrine.odm.mongodb.document_manager]
+        arguments: ["@fos_user.user_manager", "@doctrine.odm.mongodb.document_manager"]
         tags:
             - { name: kernel.event_subscriber }
 #    gsup_forum.example:

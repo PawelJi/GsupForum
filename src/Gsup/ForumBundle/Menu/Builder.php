@@ -3,7 +3,7 @@
 namespace Gsup\ForumBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
-use Symfony\Component\DependencyInjection\ContainerAware;
+use Knp\Bundle\MenuBundle\Tests\Stubs\Menu\ContainerAwareBuilder;
 
 /**
  * Description
@@ -13,9 +13,9 @@ use Symfony\Component\DependencyInjection\ContainerAware;
  * @author: Pawel J.
  * @version $Id$
  */
-class Builder extends ContainerAware
+class Builder extends ContainerAwareBuilder
 {
-    public function mainMenu(FactoryInterface $factory, array $options)
+    public function mainMenu(FactoryInterface $factory)
     {
         $menu = $factory->createItem('root');
 
