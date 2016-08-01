@@ -1,19 +1,16 @@
 <?php
 
-namespace Gsup\ForumBundle\Tests\DataFixtures\MongoDB;
+namespace Tests\Gsup\ForumBundle\DataFixtures\MongoDB;
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Gsup\ForumBundle\Document\Post;
 
- /**
- * Description
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
+/**
+ * LoadPostData class.
+ * @package Gsup\ForumBundle\Tests\DataFixtures\MongoDB
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
  */
 class LoadPostData extends AbstractFixture implements OrderedFixtureInterface
 {

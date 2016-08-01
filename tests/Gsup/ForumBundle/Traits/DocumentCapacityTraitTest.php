@@ -1,16 +1,13 @@
 <?php
 
-namespace Gsup\ForumBundle\Tests\Traits;
+namespace Tests\Gsup\ForumBundle\Traits;
 
-use Gsup\ForumBundle\Tests\DummyDocument;
+use Tests\Gsup\ForumBundle\DummyDocument;
 
 /**
- * Description
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
+ * DocumentCapacityTraitTest class.
+ * @package Gsup\ForumBundle\Tests\Traits
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
  */
 class DocumentCapacityTraitTest extends \PHPUnit_Framework_TestCase
 {

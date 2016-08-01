@@ -1,15 +1,13 @@
 <?php
 
-namespace Gsup\ForumBundle\Tests;
+namespace Tests\Gsup\ForumBundle;
+
 use Gsup\ForumBundle\Traits\DocumentCapacityTrait;
 
 /**
- * Description
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
+ * DummyDocument class.
+ * @package Gsup\ForumBundle\Tests
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
  */
 class DummyDocument
 {

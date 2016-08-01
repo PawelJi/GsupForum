@@ -3,6 +3,8 @@
 namespace Gsup\ForumBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,8 +21,8 @@ class ReplyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('content', 'textarea')
-            ->add('save', 'submit', array('label' => 'Reply'))
+            ->add('content', TextareaType::class)
+            ->add('save', SubmitType::class, array('label' => 'Reply'))
         ;
     }
 

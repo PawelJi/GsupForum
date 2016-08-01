@@ -1,17 +1,14 @@
 <?php
 
-namespace Gsup\ForumBundle\Tests\Document;
+namespace Tests\Gsup\ForumBundle\Document;
 
 use Gsup\ForumBundle\Document\Post;
 use Gsup\ForumBundle\Document\Tag;
 
- /**
- * Description
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
+/**
+ * PostTest class.
+ * @package Gsup\ForumBundle\Tests\Document
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
  */
 class PostTest extends \PHPUnit_Framework_TestCase
 {

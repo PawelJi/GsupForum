@@ -1,6 +1,6 @@
 <?php
 
-namespace Gsup\ForumBundle\Tests\EventListener;
+namespace Tests\Gsup\ForumBundle\EventListener;
 
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use Gsup\ForumBundle\Document\Post;

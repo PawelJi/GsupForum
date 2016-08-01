@@ -1,18 +1,15 @@
 <?php
- /**
- * Description
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
- */
- 
-namespace Gsup\ForumBundle\Tests\Helper;
+
+namespace Tests\Gsup\ForumBundle\Helper;
 
 use Gsup\ForumBundle\Helper\Transformer\Text\Markdown;
 use Symfony\Component\Form\Test\TypeTestCase;
 
+/**
+ * MarkdownTest class.
+ * @package Gsup\ForumBundle\Tests\Helper
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
+ */
 class MarkdownTest extends TypeTestCase
 {
     /**

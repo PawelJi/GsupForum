@@ -1,18 +1,15 @@
 <?php
- /**
- * Description
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
- */
  
-namespace Gsup\ForumBundle\Tests\Controller;
+namespace Tests\Gsup\ForumBundle\Controller;
 
 use Gsup\ForumBundle\Traits\TestUserTrait;
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
+/**
+ * PostControllerTest class.
+ * @package Gsup\ForumBundle\Tests\Controller
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
+ */
 class PostControllerTest extends WebTestCase
 {
     use TestUserTrait;
@@ -25,7 +22,7 @@ class PostControllerTest extends WebTestCase
             'Gsup\ForumBundle\DataFixtures\MongoDB\LoadCategoryData',
             'Gsup\ForumBundle\DataFixtures\MongoDB\LoadTagData',
             'Gsup\ForumBundle\DataFixtures\MongoDB\LoadUserData',
-            'Gsup\ForumBundle\Tests\DataFixtures\MongoDB\LoadPostData',
+            'Tests\Gsup\ForumBundle\DataFixtures\MongoDB\LoadPostData',
         );
 
         $this->loadFixtures($fixtures, null, 'doctrine_mongodb');

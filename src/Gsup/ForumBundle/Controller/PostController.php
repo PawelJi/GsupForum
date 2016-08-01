@@ -70,7 +70,7 @@ class PostController extends Controller
         return $this->render('GsupForumBundle:Post:show.html.twig',array(
                 'title' => 'Post - '. $post->getTitle(),
                 'post' => $post,
-                'form' => $this->createForm(new ReplyType(), null, array(
+                'form' => $this->createForm('Gsup\ForumBundle\Form\ReplyType', null, array(
                         'method' => 'POST'
                     ))->createView()
             )
@@ -89,7 +89,7 @@ class PostController extends Controller
 
         $reply = new Reply();
 
-        $form = $this->createForm(new ReplyType(), $reply, array(
+        $form = $this->createForm('Gsup\ForumBundle\Form\ReplyType', $reply, array(
             'method' => 'POST'
         ));
 

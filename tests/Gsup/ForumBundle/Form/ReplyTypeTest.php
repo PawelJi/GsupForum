@@ -1,18 +1,15 @@
 <?php
 
-namespace Gsup\ForumBundle\Tests\Form;
+namespace Tests\Gsup\ForumBundle\Form;
 
 use Gsup\ForumBundle\Document\Reply;
 use Gsup\ForumBundle\Form\ReplyType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
- /**
- * ReplyTypeTest test class.
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
+/**
+ * ReplyTypeTest class.
+ * @package Gsup\ForumBundle\Tests\Form
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
  */
 class ReplyTypeTest extends TypeTestCase
 {

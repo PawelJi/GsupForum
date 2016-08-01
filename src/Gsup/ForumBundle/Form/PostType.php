@@ -11,6 +11,9 @@
 namespace Gsup\ForumBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,15 +22,15 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', 'text')
-            ->add('content', 'textarea');
+            ->add('title', TextType::class)
+            ->add('content', TextareaType::class);
 
         if ('test' == $options['env']) {
-            $builder->add('tags', 'choice', [
+            $builder->add('tags', ChoiceType::class, [
                 'choice_label' => 'name',
                 'multiple'     => true,
             ])
-            ->add('category', 'choice', [
+            ->add('category', ChoiceType::class, [
                 'choice_label' => 'name',
             ]);
         } else {

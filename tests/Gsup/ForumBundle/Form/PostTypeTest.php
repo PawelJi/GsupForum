@@ -1,19 +1,16 @@
 <?php
 
-namespace Gsup\ForumBundle\Tests\Form;
+namespace Tests\Gsup\ForumBundle\Form;
 
 use Gsup\ForumBundle\Document\Post;
 use Gsup\ForumBundle\Document\Category;
 use Gsup\ForumBundle\Form\PostType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
- /**
- * Post type test.
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
+/**
+ * PostTypeTest class.
+ * @package Gsup\ForumBundle\Tests\Form
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
  */
 class PostTypeTest extends TypeTestCase
 {

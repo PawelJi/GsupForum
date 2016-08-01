@@ -1,16 +1,13 @@
 <?php
 
-namespace Gsup\ForumBundle\Tests;
+namespace Tests\Gsup\ForumBundle;
 
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 
- /**
- * ApplicationAvailabilityFunctionalTest test class.
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
+/**
+ * ApplicationAvailabilityFunctionalTest class.
+ * @package Gsup\ForumBundle\Tests
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
  */
 class ApplicationAvailabilityFunctionalTest extends WebTestCase
 {
@@ -22,7 +19,7 @@ class ApplicationAvailabilityFunctionalTest extends WebTestCase
             'Gsup\ForumBundle\DataFixtures\MongoDB\LoadCategoryData',
             'Gsup\ForumBundle\DataFixtures\MongoDB\LoadTagData',
             'Gsup\ForumBundle\DataFixtures\MongoDB\LoadUserData',
-            'Gsup\ForumBundle\Tests\DataFixtures\MongoDB\LoadPostData',
+            'Tests\Gsup\ForumBundle\DataFixtures\MongoDB\LoadPostData',
         );
 
         (new self())->loadFixtures($fixtures, null, 'doctrine_mongodb');

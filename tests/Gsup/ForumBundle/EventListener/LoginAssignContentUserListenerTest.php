@@ -1,6 +1,6 @@
 <?php
 
-namespace Gsup\ForumBundle\Tests\EventListener;
+namespace Tests\Gsup\ForumBundle\EventListener;
 
 use FOS\UserBundle\Event\UserEvent;
 use Gsup\ForumBundle\Document\Post;
@@ -8,8 +8,9 @@ use Gsup\ForumBundle\Document\User;
 use Gsup\ForumBundle\EventListener\LoginAssignContentUserListener;
 
 /**
- * Class LoginAssignContentUserListenerTest
+ * LoginAssignContentUserListenerTest class.
  * @package Gsup\ForumBundle\Tests\EventListener
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
  */
 class LoginAssignContentUserListenerTest extends \PHPUnit_Framework_TestCase
 {
