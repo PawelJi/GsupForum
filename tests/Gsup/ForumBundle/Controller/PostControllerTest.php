@@ -36,11 +36,11 @@ class PostControllerTest extends WebTestCase
 
         $this->assertTrue($client->getResponse()->isSuccessful());
 
-        $this->assertGreaterThan(0, $crawler->filter('form[name="forum_post"]')->count());
-        $this->assertGreaterThan(0, $crawler->filter('form[name="forum_post"] input[name="forum_post[title]"]')->count());
-        $this->assertGreaterThan(0, $crawler->filter('form[name="forum_post"] textarea[name="forum_post[content]"]')->count());
-        $this->assertGreaterThan(0, $crawler->filter('form[name="forum_post"] input[name="forum_post[tags][]"]')->count());
-        $this->assertGreaterThan(0, $crawler->filter('form[name="forum_post"] select[name="forum_post[category]"]')->count());
+        $this->assertGreaterThan(0, $crawler->filter('form[name="post"]')->count());
+        $this->assertGreaterThan(0, $crawler->filter('form[name="post"] input[name="post[title]"]')->count());
+        $this->assertGreaterThan(0, $crawler->filter('form[name="post"] textarea[name="post[content]"]')->count());
+        $this->assertGreaterThan(0, $crawler->filter('form[name="post"] input[name="post[tags][]"]')->count());
+        $this->assertGreaterThan(0, $crawler->filter('form[name="post"] select[name="post[category]"]')->count());
     }
 
     public function testPostFormSubmitAnonymous()
@@ -50,12 +50,12 @@ class PostControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/create-post');
 
         $categoryValue = $crawler
-            ->filter('select[name="forum_post[category]"] option')
+            ->filter('select[name="post[category]"] option')
             ->first()
             ->attr('value');
 
         $tagValue = $crawler
-            ->filter('input[name="forum_post[tags][]"]')
+            ->filter('input[name="post[tags][]"]')
             ->first()
             ->attr('value');
 
@@ -64,10 +64,10 @@ class PostControllerTest extends WebTestCase
         $form = $buttonCrawlerNode->form();
 
         $client->submit($form, array(
-            'forum_post[title]' => 'Test post',
-            'forum_post[content]' => 'Test content',
-            'forum_post[category]' => $categoryValue,
-            'forum_post[tags]' => [$tagValue]
+            'post[title]' => 'Test post',
+            'post[content]' => 'Test content',
+            'post[category]' => $categoryValue,
+            'post[tags]' => [$tagValue]
         ));
 
         $this->assertTrue($client->getResponse()->isRedirect());
@@ -84,12 +84,12 @@ class PostControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/create-post');
 
         $categoryValue = $crawler
-            ->filter('select[name="forum_post[category]"] option')
+            ->filter('select[name="post[category]"] option')
             ->first()
             ->attr('value');
 
         $tagValue = $crawler
-            ->filter('input[name="forum_post[tags][]"]')
+            ->filter('input[name="post[tags][]"]')
             ->first()
             ->attr('value');
 
@@ -98,10 +98,10 @@ class PostControllerTest extends WebTestCase
         $form = $buttonCrawlerNode->form();
 
         $client->submit($form, array(
-            'forum_post[title]' => 'Test post',
-            'forum_post[content]' => 'Test content',
-            'forum_post[category]' => $categoryValue,
-            'forum_post[tags]' => [$tagValue]
+            'post[title]' => 'Test post',
+            'post[content]' => 'Test content',
+            'post[category]' => $categoryValue,
+            'post[tags]' => [$tagValue]
         ));
 
         $this->assertTrue($client->getResponse()->isRedirect());
@@ -122,7 +122,7 @@ class PostControllerTest extends WebTestCase
         $form = $buttonCrawlerNode->form();
 
         $client->submit($form, array(
-            'forum_reply[content]' => 'Test content',
+            'reply[content]' => 'Test content',
         ));
 
         $this->assertTrue($client->getResponse()->isRedirect());
@@ -143,7 +143,7 @@ class PostControllerTest extends WebTestCase
         $form = $buttonCrawlerNode->form();
 
         $client->submit($form, array(
-            'forum_reply[content]' => 'Test content',
+            'reply[content]' => 'Test content',
         ));
 
         $this->assertTrue($client->getResponse()->isRedirect());

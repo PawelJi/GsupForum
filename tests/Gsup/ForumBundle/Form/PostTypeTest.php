@@ -4,7 +4,6 @@ namespace Tests\Gsup\ForumBundle\Form;
 
 use Gsup\ForumBundle\Document\Post;
 use Gsup\ForumBundle\Document\Category;
-use Gsup\ForumBundle\Form\PostType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 /**
@@ -27,8 +26,7 @@ class PostTypeTest extends TypeTestCase
             'tags'      => ['common' => 'abc']
         );
 
-        $type = new PostType();
-        $form = $this->factory->create($type, $post, ['env' => 'test']);
+        $form = $this->factory->create('Gsup\ForumBundle\Form\PostType', $post, ['env' => 'test']);
         $form->submit($formData);
 
         $this->assertTrue($form->isSynchronized());

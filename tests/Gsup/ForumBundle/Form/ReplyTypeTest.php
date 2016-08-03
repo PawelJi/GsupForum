@@ -3,7 +3,6 @@
 namespace Tests\Gsup\ForumBundle\Form;
 
 use Gsup\ForumBundle\Document\Reply;
-use Gsup\ForumBundle\Form\ReplyType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 /**
@@ -21,8 +20,7 @@ class ReplyTypeTest extends TypeTestCase
 
         $post = new Reply();
 
-        $type = new ReplyType();
-        $form = $this->factory->create($type, $post);
+        $form = $this->factory->create('Gsup\ForumBundle\Form\ReplyType', $post);
         $form->submit($formData);
 
         $this->assertTrue($form->isSynchronized());

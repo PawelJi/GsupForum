@@ -4,8 +4,6 @@ namespace Gsup\ForumBundle\Controller;
 
 use Gsup\ForumBundle\Document\Post;
 use Gsup\ForumBundle\Document\Reply;
-use Gsup\ForumBundle\Form\PostType;
-use Gsup\ForumBundle\Form\ReplyType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -19,7 +17,7 @@ class PostController extends Controller
     {
         $post = new Post();
 
-        $form = $this->createForm(new PostType(), $post, array(
+        $form = $this->createForm('Gsup\ForumBundle\Form\PostType', $post, array(
             'method' => 'POST'
         ));
 

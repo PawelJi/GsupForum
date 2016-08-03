@@ -1,22 +1,21 @@
 <?php
- /**
- * Description
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
- */
  
 namespace Gsup\ForumBundle\Form;
 
+use Doctrine\Bundle\MongoDBBundle\Form\Type\DocumentType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * PostType class.
+ * @package Gsup\ForumBundle\Form
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
+ */
 class PostType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -34,7 +33,7 @@ class PostType extends AbstractType
                 'choice_label' => 'name',
             ]);
         } else {
-            $builder->add('tags', 'document', [
+            $builder->add('tags', DocumentType::class, [
                 'widget_type' => 'inline-btn',
                 'expanded'    => true,
                 'class' => 'GsupForumBundle:Tag',
@@ -44,12 +43,12 @@ class PostType extends AbstractType
                     'class' => 'btn-default',
                 ),
             ])
-            ->add('category', 'document', [
+            ->add('category', DocumentType::class, [
                 'class' => 'GsupForumBundle:Category',
                 'choice_label' => 'name',
             ]);
         }
-        $builder->add('save', 'submit', array('label' => 'Create Post'));
+        $builder->add('save', SubmitType::class, array('label' => 'Create Post'));
     }
 
     public function configureOptions(OptionsResolver $resolver)
