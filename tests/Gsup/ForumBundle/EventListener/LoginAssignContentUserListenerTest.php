@@ -56,7 +56,7 @@ class LoginAssignContentUserListenerTest extends \PHPUnit_Framework_TestCase
 
         $user = new User();
 
-        $session = $this->getMock('Symfony\Component\HttpFoundation\Session\Session');
+        $session = $this->createMock('Symfony\Component\HttpFoundation\Session\Session');
         $session->expects($this->once())
             ->method('get')
             ->willReturn(['Gsup\ForumBundle\Document\Post', 1]);
@@ -65,7 +65,7 @@ class LoginAssignContentUserListenerTest extends \PHPUnit_Framework_TestCase
             ->expects($this->once())
             ->method('remove');
 
-        $request = $this->getMock('Symfony\Component\HttpFoundation\Request');
+        $request = $this->createMock('Symfony\Component\HttpFoundation\Request');
         $request->method('getSession')
                 ->willReturn($session);
 

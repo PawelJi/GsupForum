@@ -60,8 +60,8 @@ class RegisterAssignContentUserListenerTest extends \PHPUnit_Framework_TestCase
 
         $this->listener = new RegisterAssignContentUserListener($userManager, $dmMock);
 
-        $response = $this->getMock('Symfony\Component\HttpFoundation\Response');
-        $this->request = $this->getMock('Symfony\Component\HttpFoundation\Request');
+        $response = $this->createMock('Symfony\Component\HttpFoundation\Response');
+        $this->request = $this->createMock('Symfony\Component\HttpFoundation\Request');
 
         $this->event = new FilterUserResponseEvent($this->user, $this->request, $response);
     }
@@ -72,7 +72,7 @@ class RegisterAssignContentUserListenerTest extends \PHPUnit_Framework_TestCase
             ->method('find')
             ->willReturn($this->post);
 
-        $session = $this->getMock('Symfony\Component\HttpFoundation\Session\Session');
+        $session = $this->createMock('Symfony\Component\HttpFoundation\Session\Session');
         $session->expects($this->once())
             ->method('get')
             ->willReturn(['Gsup\ForumBundle\Document\Post', 1]);
