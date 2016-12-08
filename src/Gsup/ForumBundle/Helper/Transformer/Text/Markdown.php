@@ -1,12 +1,4 @@
 <?php
- /**
- * Description
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
- */
  
 namespace Gsup\ForumBundle\Helper\Transformer\Text;
 
@@ -27,6 +19,7 @@ class Markdown
      * Convert html to markdown.
      *
      * @param $html
+     * @return string
      */
     public function toMarkdown($html)
     {
@@ -38,7 +31,7 @@ class Markdown
      * Converts markdown text style to html.
      *
      * @param $text
-     * @return mixed
+     * @return string
      */
     public function toHtml($text)
     {

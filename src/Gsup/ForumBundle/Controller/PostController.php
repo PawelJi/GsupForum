@@ -93,7 +93,7 @@ class PostController extends Controller
 
         $form->handleRequest($request);
 
-        if( !$form->isValid() ){
+        if (!$form->isValid()) {
             return $this->render('GsupForumBundle:Post:show.html.twig',array(
                     'title' => 'Post - '. $post->getTitle(),
                     'post' => $post,

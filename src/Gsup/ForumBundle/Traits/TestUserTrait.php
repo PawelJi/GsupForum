@@ -1,17 +1,14 @@
 <?php
- /**
- * Description
- *
- * @package 
- * @subpackage 
- * @author: Pawel J.
- * @version $Id$
- */
  
 namespace Gsup\ForumBundle\Traits;
 
 use Symfony\Component\BrowserKit\Cookie;
 
+/**
+ * TestUserTrait class.
+ * @package Gsup\ForumBundle\Traits
+ * @author: Pawel Jablonski <dev.pawel@gmail.com>
+ */
 trait TestUserTrait
 {
     protected function createAuthorizedClient()
