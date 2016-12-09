@@ -19,6 +19,11 @@ class Reply
     protected $id;
 
     /**
+     * @var string $hash_id
+     */
+    protected $hash_id;
+
+    /**
      * @var string $content
      */
     protected $content;
@@ -81,6 +86,28 @@ class Reply
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set hashId
+     *
+     * @param string $hashId
+     * @return self
+     */
+    public function setHashId($hashId)
+    {
+        $this->hash_id = $hashId;
+        return $this;
+    }
+
+    /**
+     * Get hashId
+     *
+     * @return string $hashId
+     */
+    public function getHashId()
+    {
+        return $this->hash_id;
     }
 
     /**

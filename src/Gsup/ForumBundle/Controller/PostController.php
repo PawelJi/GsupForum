@@ -6,6 +6,7 @@ use Gsup\ForumBundle\Document\Post;
 use Gsup\ForumBundle\Document\Reply;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use As3\ShortMongoId\Shortener;
 
 /**
  * Class PostController
@@ -40,6 +41,12 @@ class PostController extends Controller
 
         $dm = $this->get('doctrine_mongodb')->getManager();
         $dm->persist($post);
+        $dm->flush();
+
+        // shortener id for exposing in url
+        $shortener = new Shortener();
+        $shortId   = $shortener->shorten($post->getId());
+        $post->setHashId($shortId);
         $dm->flush();
 
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
@@ -110,6 +117,12 @@ class PostController extends Controller
         $post->addReply($reply);
 
         $dm = $this->get('doctrine_mongodb')->getManager();
+        $dm->flush();
+
+        // shortener id for exposing in url
+        $shortener = new Shortener();
+        $shortId   = $shortener->shorten($reply->getId());
+        $reply->setHashId($shortId);
         $dm->flush();
 
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
