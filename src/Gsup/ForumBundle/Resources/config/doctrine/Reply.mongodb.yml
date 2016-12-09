@@ -3,10 +3,6 @@ Gsup\ForumBundle\Document\Reply:
     fields:
         id:
             id: true
-        hash_id:
-            type: string
-            index: true
-            unique: true
         content:
             type: string
         rate:

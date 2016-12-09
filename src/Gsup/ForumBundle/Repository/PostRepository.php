@@ -27,6 +27,22 @@ class PostRepository extends DocumentRepository
     }
 
     /**
+     * Find active post by id
+     *
+     * @param $id
+     * @return array|null|object
+     */
+    public function findActiveById($id)
+    {
+        return $this->createQueryBuilder()
+            ->field('_id')->equals(new \MongoId($id))
+            ->field('user')->exists(true)
+            ->field('is_active')->equals(true)
+            ->getQuery()
+            ->getSingleResult();
+    }
+
+    /**
      * Find active post document.
      *
      * @param $slug
@@ -54,5 +70,21 @@ class PostRepository extends DocumentRepository
             ->field('is_active')->equals(false)
             ->getQuery()
             ->execute();
+    }
+
+    /**
+     * Find active post with matching reply id.
+     *
+     * @param $replyId
+     * @return array|null|object
+     */
+    public function findActiveByReplyId($replyId)
+    {
+        return $this->createQueryBuilder()
+            ->field('reply._id')->equals(new \MongoId($replyId))
+            ->field('is_active')->equals(true)
+            ->getQuery()
+            ->getSingleResult()
+            ;
     }
 }

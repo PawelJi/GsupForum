@@ -18,11 +18,6 @@ class Post
     protected $id;
 
     /**
-     * @var string $hash_id
-     */
-    protected $hash_id;
-
-    /**
      * @var string $title
      */
     protected $title;
@@ -151,28 +146,6 @@ class Post
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set hashId
-     *
-     * @param string $hashId
-     * @return self
-     */
-    public function setHashId($hashId)
-    {
-        $this->hash_id = $hashId;
-        return $this;
-    }
-
-    /**
-     * Get hashId
-     *
-     * @return string $hashId
-     */
-    public function getHashId()
-    {
-        return $this->hash_id;
     }
 
     /**
@@ -739,5 +712,22 @@ class Post
             }
         }
         $this->setTags($tagsHashArray);
+    }
+
+    /**
+     * Returns first reply with id given.
+     *
+     * @param $replyId
+     * @return Reply|null
+     */
+    public function getReplyById($replyId)
+    {
+        /** @var Reply $reply */
+        foreach ($this->getReply() as $reply) {
+            if ($replyId == $reply->getId()) {
+                return $reply;
+            }
+        }
+        return null;
     }
 }

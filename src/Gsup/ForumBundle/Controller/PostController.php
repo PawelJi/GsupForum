@@ -43,12 +43,6 @@ class PostController extends Controller
         $dm->persist($post);
         $dm->flush();
 
-        // shortener id for exposing in url
-        $shortener = new Shortener();
-        $shortId   = $shortener->shorten($post->getId());
-        $post->setHashId($shortId);
-        $dm->flush();
-
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             $this->get('session')->getFlashBag()->add('notice', 'Login or register to add new post.');
             $this->get('session')->set('assignUserStack', ['GsupForumBundle:Post', $post->getId()]);
@@ -117,12 +111,6 @@ class PostController extends Controller
         $post->addReply($reply);
 
         $dm = $this->get('doctrine_mongodb')->getManager();
-        $dm->flush();
-
-        // shortener id for exposing in url
-        $shortener = new Shortener();
-        $shortId   = $shortener->shorten($reply->getId());
-        $reply->setHashId($shortId);
         $dm->flush();
 
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
