@@ -46,7 +46,7 @@ assetic:
         cssrewrite:
             apply_to: ".css$"
         sass:
-            bin: /usr/bin/sass
+            bin: /usr/local/bin/sass
             apply_to: \.(sass|scss)$
         yui_css:
             jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.8.jar"
@@ -110,6 +110,9 @@ fos_user:
     db_driver: mongodb # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: Gsup\ForumBundle\Document\User
+    from_email:
+        address: you@example.com
+        sender_name: You
 
 #Paginator defaults
 knp_paginator:
